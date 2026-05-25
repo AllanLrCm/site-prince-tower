@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prince Tower | Negócios, Moradia, Eventos e Lazer em São Paulo</title>
+  <meta name="description" content="Um empreendimento premium completo que reúne espaços para escritórios, apartamentos, eventos e um driving range exclusivo de golfe.">
+  
+  <!-- Fontes (Inter) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo">Prince Tower</a>
+      
+      <nav class="nav">
+        <ul class="nav__list">
+          <li><a href="comercial.html" class="nav__link">Comercial</a></li>
+          <li><a href="residencial.html" class="nav__link">Residencial</a></li>
+          <li><a href="eventos.html" class="nav__link">Eventos</a></li>
+          <li><a href="golf.html" class="nav__link">Golf</a></li>
+          <li><a href="#sobre" class="nav__link">Sobre</a></li>
+          <li><a href="contato.html" class="nav__link">Contato</a></li>
+          <li class="nav__btn-container">
+            <a href="contato.html" class="btn btn--primary">Fale Conosco</a>
+          </li>
+        </ul>
+      </nav>
+      
+      <button class="menu-toggle" aria-label="Abrir Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================= HERO CAROUSEL ================= -->
+    <section class="hero-carousel" id="home">
+      <div class="carousel-inner">
+        <!-- Slide 1: Comercial -->
+        <div class="carousel-item active" style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2000&auto=format&fit=crop');">
+          <div class="carousel-overlay"></div>
+          <div class="container carousel-content">
+            <h2 class="carousel-title">Comercial</h2>
+            <p class="carousel-subtitle">O endereço do seu próximo sucesso.</p>
+            <p class="carousel-desc">Salas modernas para empresas e profissionais no melhor ponto da cidade.</p>
+            <div class="hero__actions mt-md">
+              <a href="#" data-modal-target="modal-comercial" class="btn btn--primary">Descubra</a>
+              <a href="comercial.html" class="btn btn--outline-light">Ver Detalhes</a>
+            </div>
+          </div>
+        </div>
+        <!-- Slide 2: Residencial -->
+        <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=2000&auto=format&fit=crop');">
+          <div class="carousel-overlay"></div>
+          <div class="container carousel-content">
+            <h2 class="carousel-title">Residencial</h2>
+            <p class="carousel-subtitle">Conforto e praticidade urbana.</p>
+            <p class="carousel-desc">Apartamentos de 35m² pensados para o seu bem-estar diário.</p>
+            <div class="hero__actions mt-md">
+              <a href="#" data-modal-target="modal-residencial" class="btn btn--primary">Descubra</a>
+              <a href="residencial.html" class="btn btn--outline-light">Ver Detalhes</a>
+            </div>
+          </div>
+        </div>
+        <!-- Slide 3: Eventos -->
+        <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=2000&auto=format&fit=crop');">
+          <div class="carousel-overlay"></div>
+          <div class="container carousel-content">
+            <h2 class="carousel-title">Eventos</h2>
+            <p class="carousel-subtitle">Momentos que marcam.</p>
+            <p class="carousel-desc">Espaços sofisticados e versáteis para ocasiões inesquecíveis.</p>
+            <div class="hero__actions mt-md">
+              <a href="#" data-modal-target="modal-eventos" class="btn btn--primary">Descubra</a>
+              <a href="eventos.html" class="btn btn--outline-light">Ver Detalhes</a>
+            </div>
+          </div>
+        </div>
+        <!-- Slide 4: Golf -->
+        <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1587334208460-70562e8dae4f?q=80&w=2000&auto=format&fit=crop');">
+          <div class="carousel-overlay"></div>
+          <div class="container carousel-content">
+            <h2 class="carousel-title">Drive Range</h2>
+            <p class="carousel-subtitle">Evolua seu swing no coração da cidade.</p>
+            <p class="carousel-desc">Estrutura profissional com 100 jardas e baias automatizadas.</p>
+            <div class="hero__actions mt-md">
+              <a href="#" data-modal-target="modal-golf" class="btn btn--primary">Descubra</a>
+              <a href="golf.html" class="btn btn--outline-light">Ver Detalhes</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Carousel Controls -->
+      <div class="carousel-controls">
+        <button class="carousel-btn prev" aria-label="Anterior">&#10094;</button>
+        <button class="carousel-btn next" aria-label="Próximo">&#10095;</button>
+      </div>
+      
+      <!-- Carousel Indicators -->
+      <div class="carousel-indicators">
+        <span class="dot active" data-slide="0"></span>
+        <span class="dot" data-slide="1"></span>
+        <span class="dot" data-slide="2"></span>
+        <span class="dot" data-slide="3"></span>
+      </div>
+    </section>
+
+    <!-- ================= EXPERIÊNCIAS ================= -->
+    <section id="experiencias" class="section">
+      <div class="container">
+        <div class="experiences">
+          
+          <!-- Card Comercial -->
+          <article class="experience-card animate-fade-up" data-modal-target="modal-comercial">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop" alt="Salas Comerciais">
+            <div class="experience-card__content">
+              <h3 class="experience-card__title">Comercial</h3>
+            </div>
+          </article>
+
+          <!-- Card Residencial -->
+          <article class="experience-card animate-fade-up delay-100" data-modal-target="modal-residencial">
+            <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1200&auto=format&fit=crop" alt="Apartamentos Residenciais">
+            <div class="experience-card__content">
+              <h3 class="experience-card__title">Residencial</h3>
+            </div>
+          </article>
+
+          <!-- Card Eventos -->
+          <article class="experience-card animate-fade-up" data-modal-target="modal-eventos">
+            <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=1200&auto=format&fit=crop" alt="Espaços para Eventos">
+            <div class="experience-card__content">
+              <h3 class="experience-card__title">Eventos</h3>
+            </div>
+          </article>
+
+          <!-- Card Golf -->
+          <article class="experience-card animate-fade-up delay-100" data-modal-target="modal-golf">
+            <img src="https://images.unsplash.com/photo-1587334208460-70562e8dae4f?q=80&w=1200&auto=format&fit=crop" alt="Drive Range de Golf">
+            <div class="experience-card__content">
+              <h3 class="experience-card__title">Golf</h3>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= INSTITUCIONAL ================= -->
+    <section id="sobre" class="section section--alt">
+      <div class="container text-center animate-fade-up">
+        <h2 class="mb-md">Muito mais que um endereço. <br>Uma nova forma de viver a cidade.</h2>
+        <p style="max-width: 800px; margin: 0 auto; font-size: 1.25rem;">
+          O Prince Tower reúne diferentes experiências em um só endereço, oferecendo espaços pensados para negócios, moradia, lazer e encontros especiais com a mais alta sofisticação.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= DIFERENCIAIS ================= -->
+    <section class="section">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem;">
+          
+          <div class="animate-fade-up">
+            <h3 style="font-size: 1.25rem; color: var(--color-accent); margin-bottom: 0.5rem;">01. Localização</h3>
+            <h4 class="mb-sm">Estratégica</h4>
+            <p>Acesso rápido e prático aos principais polos de negócios e conveniências da capital paulista.</p>
+          </div>
+
+          <div class="animate-fade-up delay-100">
+            <h3 style="font-size: 1.25rem; color: var(--color-accent); margin-bottom: 0.5rem;">02. Versatilidade</h3>
+            <h4 class="mb-sm">Múltiplas Possibilidades</h4>
+            <p>Seja para morar, trabalhar ou realizar um grande evento, temos a estrutura adequada para a sua necessidade.</p>
+          </div>
+
+          <div class="animate-fade-up delay-200">
+            <h3 style="font-size: 1.25rem; color: var(--color-accent); margin-bottom: 0.5rem;">03. Conforto</h3>
+            <h4 class="mb-sm">Experiência Premium</h4>
+            <p>Atendimento diferenciado, segurança rigorosa e ambientes planejados com design de alto padrão.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= DESTAQUE GOLF ================= -->
+    <section class="section section--dark" style="position: relative; overflow: hidden; padding: 6rem 0;">
+      <!-- Imagem de Fundo Escura para o Golf -->
+      <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;">
+        <img src="https://images.unsplash.com/photo-1593111774240-d529f12cb416?q=80&w=2000&auto=format&fit=crop" alt="Golf Noturno" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.3;">
+      </div>
+      
+      <div class="container" style="position: relative; z-index: 2; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 2rem;">
+        <div class="animate-fade-up" style="flex: 1; min-width: 300px;">
+          <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">O Exclusivo<br>Drive Range</h2>
+          <p style="font-size: 1.25rem; max-width: 500px; color: rgba(255,255,255,0.8);">
+            Uma experiência completa para quem busca evoluir no golfe com estrutura profissional de altíssimo nível.
+          </p>
+          <a href="golf.html" class="btn btn--outline-light" style="margin-top: 1.5rem;">Descubra o Golf</a>
+        </div>
+        
+        <div class="animate-fade-up delay-100" style="flex: 1; min-width: 300px;">
+          <ul style="border-left: 1px solid rgba(255,255,255,0.2); padding-left: 2rem;">
+            <li style="margin-bottom: 1.5rem;">
+              <strong style="display: block; font-size: 1.25rem; color: var(--color-accent);">100 Jardas</strong>
+              <span style="color: rgba(255,255,255,0.7);">Distância ideal para treinos precisos.</span>
+            </li>
+            <li style="margin-bottom: 1.5rem;">
+              <strong style="display: block; font-size: 1.25rem; color: var(--color-accent);">50 Baias</strong>
+              <span style="color: rgba(255,255,255,0.7);">Automatizadas para o seu máximo conforto.</span>
+            </li>
+            <li>
+              <strong style="display: block; font-size: 1.25rem; color: var(--color-accent);">Ambiente Iluminado</strong>
+              <span style="color: rgba(255,255,255,0.7);">Para jogos noturnos inesquecíveis.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= GALERIA ================= -->
+    <section class="section">
+      <div class="container">
+        <h2 class="text-center mb-lg animate-fade-up">Visão Geral</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem;" class="animate-fade-up delay-100">
+          <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=800&auto=format&fit=crop" alt="Interior Sofisticado" style="height: 300px; width: 100%; object-fit: cover;">
+          <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=800&auto=format&fit=crop" alt="Estrutura Arquitetônica" style="height: 300px; width: 100%; object-fit: cover;">
+          <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=800&auto=format&fit=crop" alt="Ambiente Corporativo" style="height: 300px; width: 100%; object-fit: cover;">
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= LOCALIZAÇÃO ================= -->
+    <section class="section section--alt">
+      <div class="container animate-fade-up">
+        <div style="display: flex; flex-wrap: wrap; gap: 4rem; align-items: center;">
+          <div style="flex: 1; min-width: 300px;">
+            <h2 class="mb-sm">São Paulo</h2>
+            <p style="font-size: 1.125rem;">Localização privilegiada, com fácil acesso às principais vias, serviços e conveniências da cidade. Onde a cidade se conecta, seu estilo de vida acontece.</p>
+          </div>
+          <div style="flex: 1; min-width: 300px; aspect-ratio: 16/9; background-color: #ddd;">
+            <img src="https://images.unsplash.com/photo-1543083477-4f785aeafaa9?q=80&w=1200&auto=format&fit=crop" alt="Mapa de São Paulo" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CTA FINAL ================= -->
+    <section class="section text-center animate-fade-up">
+      <div class="container">
+        <h2 class="mb-sm" style="font-size: clamp(2rem, 4vw, 3.5rem);">Encontre o espaço ideal para <br>você ou para o seu negócio.</h2>
+        <div class="hero__actions" style="justify-content: center; margin-top: 2rem;">
+          <a href="#" class="btn btn--primary">Falar no WhatsApp</a>
+          <a href="contato.html" class="btn btn--outline">Solicitar Informações</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <h3 class="logo" style="color: var(--color-white); font-size: 1.5rem; margin-bottom: 1rem;">Prince Tower</h3>
+          <p style="color: rgba(255,255,255,0.7); max-width: 250px;">Uma experiência premium em moradia, negócios, eventos e golfe.</p>
+        </div>
+        <div>
+          <h4 class="footer__title">Espaços</h4>
+          <a href="comercial.html" class="footer__link">Comercial</a>
+          <a href="residencial.html" class="footer__link">Residencial</a>
+          <a href="eventos.html" class="footer__link">Eventos</a>
+          <a href="golf.html" class="footer__link">Golf</a>
+        </div>
+        <div>
+          <h4 class="footer__title">Prince Tower</h4>
+          <a href="#sobre" class="footer__link">Sobre o Empreendimento</a>
+          <a href="#" class="footer__link">Diferenciais</a>
+          <a href="#" class="footer__link">Localização</a>
+        </div>
+        <div>
+          <h4 class="footer__title">Contato</h4>
+          <a href="contato.html" class="footer__link">Fale Conosco</a>
+          <a href="#" class="footer__link">Trabalhe Conosco</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        &copy; 2026 Prince Tower. Todos os direitos reservados.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= MODAIS ================= -->
+  
+  <!-- Modal Comercial -->
+  <div class="modal-overlay" id="modal-comercial">
+    <div class="modal">
+      <button class="modal__close" aria-label="Fechar">&times;</button>
+      <div class="modal__image">
+        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop" alt="Comercial">
+      </div>
+      <div class="modal__content">
+        <h2 class="mb-sm">Comercial</h2>
+        <p class="mb-md">Ambiente profissional moderno em localização estratégica. Salas comerciais planejadas para empresas, escritórios e profissionais que valorizam requinte e praticidade.</p>
+        <ul class="modal__features">
+          <li>Plantas inteligentes e versáteis</li>
+          <li>Infraestrutura de ponta</li>
+          <li>Recepção sofisticada</li>
+        </ul>
+        <div class="modal__actions mt-md">
+          <a href="comercial.html" class="btn btn--primary">Ver página completa</a>
+          <a href="contato.html" class="btn btn--outline">Fale Conosco</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Residencial -->
+  <div class="modal-overlay" id="modal-residencial">
+    <div class="modal">
+      <button class="modal__close" aria-label="Fechar">&times;</button>
+      <div class="modal__image">
+        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=800&auto=format&fit=crop" alt="Residencial">
+      </div>
+      <div class="modal__content">
+        <h2 class="mb-sm">Residencial</h2>
+        <p class="mb-md">Moradia urbana compacta, funcional e altamente confortável. Apartamentos de 35m² para locação pensados em otimizar a sua rotina no coração da cidade.</p>
+        <ul class="modal__features">
+          <li>35m² inteligentes</li>
+          <li>Alto padrão de acabamento</li>
+          <li>Praticidade no dia a dia</li>
+        </ul>
+        <div class="modal__actions mt-md">
+          <a href="residencial.html" class="btn btn--primary">Ver página completa</a>
+          <a href="contato.html" class="btn btn--outline">Fale Conosco</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Eventos -->
+  <div class="modal-overlay" id="modal-eventos">
+    <div class="modal">
+      <button class="modal__close" aria-label="Fechar">&times;</button>
+      <div class="modal__image">
+        <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=800&auto=format&fit=crop" alt="Eventos">
+      </div>
+      <div class="modal__content">
+        <h2 class="mb-sm">Eventos</h2>
+        <p class="mb-md">Espaços impecáveis voltados para reuniões corporativas, confraternizações e momentos marcantes que merecem um cenário inesquecível.</p>
+        <ul class="modal__features">
+          <li>Ambientes climatizados</li>
+          <li>Layouts flexíveis</li>
+          <li>Apoio estrutural completo</li>
+        </ul>
+        <div class="modal__actions mt-md">
+          <a href="eventos.html" class="btn btn--primary">Ver página completa</a>
+          <a href="contato.html" class="btn btn--outline">Fale Conosco</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Golf -->
+  <div class="modal-overlay" id="modal-golf">
+    <div class="modal">
+      <button class="modal__close" aria-label="Fechar">&times;</button>
+      <div class="modal__image">
+        <img src="https://images.unsplash.com/photo-1587334208460-70562e8dae4f?q=80&w=800&auto=format&fit=crop" alt="Golf">
+      </div>
+      <div class="modal__content">
+        <h2 class="mb-sm">Golf</h2>
+        <p class="mb-md">A grande joia do empreendimento. Um Drive Range completo, projetado para elevar a sua técnica em um ambiente de alto padrão e conforto absoluto.</p>
+        <ul class="modal__features">
+          <li>Drive Range de 100 jardas</li>
+          <li>50 baias automatizadas</li>
+          <li>Equipe altamente treinada</li>
+        </ul>
+        <div class="modal__actions mt-md">
+          <a href="golf.html" class="btn btn--primary">Ver página completa</a>
+          <a href="contato.html" class="btn btn--outline">Fale Conosco</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>

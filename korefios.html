@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Korefios | Linhas de Qualidade</title>
+    <meta name="description" content="Korefios fornece linhas e carretéis em diversas cores, espessuras e tamanhos, com padrão de qualidade e atendimento que faz a diferença.">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css?v=2">
+    <link rel="apple-touch-icon" type="image/svg+xml" href="assets/korefios_logo_simbolo.svg">
+    
+    <!-- Ícones (Lucide) via CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container nav-container">
+            <a href="#" class="logo-container">
+                <img src="assets/korefios_logo_horizontal.svg" alt="Korefios Logo" class="logo">
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i data-lucide="menu"></i>
+            </button>
+
+            <nav class="nav-links" id="navLinks">
+                <a href="#sobre" class="nav-link">Sobre</a>
+                <a href="#produtos" class="nav-link">Produtos</a>
+                <a href="#diferenciais" class="nav-link">Diferenciais</a>
+                <a href="#contato" class="nav-link">Contato</a>
+            </nav>
+            
+            <div class="header-action">
+                <!-- Botão WhatsApp removido -->
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="inicio" class="hero">
+            <div class="container hero-container">
+                <div class="hero-content reveal">
+                    <div class="accent-line"></div>
+                    <h1 class="display-title">Qualidade em cada fio,<br><span class="text-red">confiança</span> em cada entrega.</h1>
+                    <p class="subtitle">A Korefios fornece linhas e carretéis em diversas cores, espessuras e tamanhos, com padrão de qualidade e atendimento que faz a diferença.</p>
+                    
+                    <div class="hero-actions">
+                        <a href="#" onclick="openQuoteModal(event)" class="btn btn-hero-primary">Solicitar orçamento</a>
+                        <a href="#diferenciais" class="btn btn-hero-secondary">
+                            Conheça nossas soluções
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="hero-mobile-visual reveal delay-2">
+                    <img src="assets/rolo hero v2.png" alt="Carretéis Industriais Korefios" class="hero-mobile-img">
+                </div>
+            </div>
+        </section>
+
+        <!-- Sobre Section -->
+        <section id="sobre" class="sobre">
+            <div class="container sobre-container">
+                <div class="sobre-image-wrapper reveal">
+                    <img src="assets/fabrica.png" alt="Fábrica moderna da Korefios" class="sobre-image">
+                </div>
+                
+                <div class="sobre-content reveal delay-1">
+                    <span class="label">Sobre a Korefios</span>
+                    <h2 class="section-title">Tradição que inspira. Qualidade que entrega.</h2>
+                    <p class="section-desc">Tradição, qualidade e compromisso fazem parte da essência da <strong style="color: var(--korefios-red);">Korefios</strong>. Fornecemos  linhas e carretéis com padrão consistente, atendimento próximo e soluções pensadas para atender diferentes demandas com eficiência.</p>
+                    
+                    <div class="sobre-features">
+                        <div class="sobre-feature feature-highlight">
+                            <div class="sobre-icon-wrapper">
+                                <i data-lucide="trophy" class="sobre-icon"></i>
+                            </div>
+                            <strong>Experiência</strong>
+                            <span>no mercado</span>
+                        </div>
+                        <div class="sobre-feature">
+                            <div class="sobre-icon-wrapper">
+                                <i data-lucide="star" class="sobre-icon"></i>
+                            </div>
+                            <strong>Qualidade</strong>
+                            <span>comprovada</span>
+                        </div>
+                        <div class="sobre-feature">
+                            <div class="sobre-icon-wrapper">
+                                <i data-lucide="users" class="sobre-icon"></i>
+                            </div>
+                            <strong>Atendimento</strong>
+                            <span>próximo</span>
+                        </div>
+                        <div class="sobre-feature">
+                            <div class="sobre-icon-wrapper">
+                                <i data-lucide="clock" class="sobre-icon"></i>
+                            </div>
+                            <strong>Agilidade</strong>
+                            <span>na entrega</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Produtos Section -->
+        <section id="produtos" class="produtos">
+            <div class="container">
+                <div class="section-header center reveal">
+                    <span class="label">Produtos</span>
+                    <h2 class="section-title">Soluções desenvolvidas para cada necessidade.</h2>
+                </div>
+                
+                <div class="produtos-grid">
+                    <!-- Produto 1 -->
+                    <div class="produto-card reveal delay-1">
+                        <div class="produto-img-box">
+                            <img src="assets/qualidade-padronizada.png" alt="Controle de Qualidade">
+                        </div>
+                        <div class="produto-info">
+                            <div class="produto-icon"><i data-lucide="shield-check"></i></div>
+                            <h3>Controle de<br>Qualidade</h3>
+                        </div>
+                    </div>
+
+                    <!-- Produto 2 -->
+                     <div class="produto-card reveal delay-4">
+                        <div class="produto-img-box">
+                            <img src="assets/diversidade-de-cores.png" alt="Diversidade de Cores">
+                        </div>
+                        <div class="produto-info">
+                            <div class="produto-icon"><i data-lucide="palette"></i></div>
+                            <h3>Diversidade<br>de Cores</h3>
+                        </div>
+                    </div>
+
+                    <!-- Produto 3 -->                     
+                    <div class="produto-card reveal delay-2">
+                        <div class="produto-img-box">
+                            <img src="assets/espessura-padronizada-2.png" alt="Espessura Padronizada">
+                        </div>
+                        <div class="produto-info">
+                            <div class="produto-icon"><i data-lucide="badge-check"></i></div>
+                            <h3>Espessura<br>Padronizada</h3>
+                        </div>
+                    </div>
+                    
+                    <!-- Produto 4 -->
+                    <div class="produto-card reveal delay-3">
+                        <div class="produto-img-box">
+                            <img src="assets/carreteis-industriais.png" alt="Carretéis Industriais">
+                        </div>
+                        <div class="produto-info">
+                            <div class="produto-icon"><i data-lucide="package"></i></div>
+                            <h3>Carretéis<br>Industriais</h3>
+                        </div>
+                    </div>
+                    
+                    <!-- Produto 5 -->
+                    <div class="produto-card reveal delay-5">
+                        <div class="produto-img-box">
+                            <img src="assets/produção sob demanda-2.png" alt="Produção sob demanda">
+                        </div>
+                        <div class="produto-info">
+                            <div class="produto-icon"><i data-lucide="settings"></i></div>
+                            <h3>Produção<br>sob demanda</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Diferenciais Section -->
+        <section id="diferenciais" class="diferenciais">
+            <div class="container">
+                <div class="section-header center reveal">
+                    <span class="label">Diferenciais</span>
+                    <h2 class="section-title">O que nos torna diferentes.</h2>
+                </div>
+                
+                <div class="diferenciais-process">
+                    <!-- Linha conectora -->
+                    <div class="process-line">
+                        <div class="process-line-glow"></div>
+                    </div>
+                    
+                    <div class="process-step reveal delay-1">
+                        <div class="dif-card">
+                            <div class="dif-icon-wrapper">
+                                <i data-lucide="shield-check"></i>
+                            </div>
+                            <h4>Qualidade</h4>
+                            <p>Matérias-primas selecionadas e processos consistentes para garantir resistência, durabilidade e confiança.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step reveal delay-2">
+                        <div class="dif-card">
+                            <div class="dif-icon-wrapper">
+                                <i data-lucide="layers"></i>
+                            </div>
+                            <h4>Variedade</h4>
+                            <p>Diversidade de cores, espessuras e composições para atender diferentes demandas com precisão.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step reveal delay-3">
+                        <div class="dif-card">
+                            <div class="dif-icon-wrapper">
+                                <i data-lucide="headphones"></i>
+                            </div>
+                            <h4>Atendimento</h4>
+                            <p>Atendimento próximo e consultivo para entender sua necessidade e indicar a melhor solução.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step reveal delay-4">
+                        <div class="dif-card">
+                            <div class="dif-icon-wrapper">
+                                <i data-lucide="truck"></i>
+                            </div>
+                            <h4>Agilidade</h4>
+                            <p>Processos produtivos e logísticos organizados para garantir agilidade e pontualidade nas entregas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contato Completo Section -->
+        <section id="contato" class="contato-section">
+            <div class="container">
+                <div class="section-header center reveal">
+                    <h2 class="section-title">Precisa de linhas para sua produção?</h2>
+                    <p class="section-desc">Fale com nossa equipe e encontre a solução ideal para sua necessidade.</p>
+                </div>
+
+                <div class="contato-grid reveal delay-1">
+                    <!-- Coluna Esquerda: Formulário -->
+                    <div class="contato-form-box">
+                        <h3>Solicite seu orçamento</h3>
+                        <p>Envie sua necessidade e a equipe Korefios entrará em contato.</p>
+                        
+                        <form id="contactForm" onsubmit="handleQuoteFormSubmit(event)">
+                            <div class="form-group">
+                                <label for="c_name">Nome completo *</label>
+                                <input type="text" id="c_name" required>
+                            </div>
+                            
+                            <div class="form-group-row">
+                                <div class="form-group">
+                                    <label for="c_phone">WhatsApp / Telefone *</label>
+                                    <input type="tel" id="c_phone" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="c_email">E-mail</label>
+                                    <input type="email" id="c_email">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="c_company">Empresa (opcional)</label>
+                                <input type="text" id="c_company">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="c_message">Mensagem *</label>
+                                <textarea id="c_message" rows="4" placeholder="Descreva sua necessidade (tipo de linha, quantidade, aplicação, etc.)" required></textarea>
+                            </div>
+                            
+                            <div id="contactFormStatus" class="form-status"></div>
+                            
+                            <button type="submit" class="btn btn-primary btn-submit-quote">
+                                Enviar solicitação
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Coluna Direita: Contato Rápido -->
+                    <div class="contato-info-box">
+                        <h4>Contato rápido</h4>
+
+                        <div class="qc-item">
+                            <i data-lucide="message-circle"></i>
+                            <a href="https://wa.me/5511972395981?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento." 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            class="contact-link">
+                                <strong>WhatsApp</strong>
+                                <span>(11) 97239-5981</span>
+                            </a>
+                        </div>
+
+                        <div class="qc-item">
+                            <i data-lucide="phone"></i>
+                            <a href="tel:+5511972395981" class="contact-link">
+                                <strong>Telefone</strong>
+                                <span>(11) 97239-5981</span>
+                            </a>
+                        </div>
+
+                        <div class="qc-item">
+                            <i data-lucide="mail"></i>
+                            <a href="mailto:contato@korefios.com.br" class="contact-link">
+                                <strong>E-mail</strong>
+                                <span>contato@korefios.com.br</span>
+                            </a>
+                        </div>
+
+                        <div class="qc-item">
+                            <i data-lucide="clock"></i>
+                            <div>
+                                <strong>Horário de Atendimento</strong>
+                                <span>Seg a Sex das 8h às 17h</span>
+                            </div>
+                        </div>
+
+                        <div class="qc-item qc-address">
+                            <i data-lucide="map-pin"></i>
+                            <div>
+                                <strong>Endereço</strong>
+
+                                <span>
+                                    <a href="https://maps.google.com/?q=Rua+Mamoré,+353+Bom+Retiro+São+Paulo+SP"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="contact-link">
+                                        Rua Mamoré, 353<br>
+                                        Bom Retiro – CEP: 01128-020<br>
+                                        São Paulo – SP
+                                    </a>
+                                </span>
+
+                                <a href="https://maps.google.com/?q=Rua+Mamoré,+353+Bom+Retiro+São+Paulo+SP"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="maps-inline-link">
+                                    Abrir no Google Maps
+                                    <i data-lucide="external-link"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <!-- Coluna 1 -->
+            <div class="footer-brand">
+                <img src="assets/korefios_logo_vertical_branco.svg" alt="Korefios Logo" class="footer-logo">
+                <p class="footer-slogan">Linhas e carretéis com qualidade e consistência para diferentes demandas produtivas.</p>
+                
+                <div class="footer-address">
+                    <p><strong>Endereço:</strong><br>
+                    <a href="https://maps.google.com/?q=Rua+Mamoré+353+Bom+Retiro" target="_blank" class="address-link">
+                        Rua Mamoré, 353<br>
+                        Bom Retiro – CEP: 01128-020<br>
+                        São Paulo – SP
+                    </a></p>
+                </div>
+            </div>
+            
+            <!-- Coluna 2 -->
+            <div class="footer-nav">
+                <h5>NAVEGAÇÃO</h5>
+                <ul>
+                    <li><a href="#sobre" class="footer-link">Sobre</a></li>
+                    <li><a href="#produtos" class="footer-link">Produtos</a></li>
+                    <li><a href="#diferenciais" class="footer-link">Diferenciais</a></li>
+                    <li><a href="#contato" class="footer-link">Contato</a></li>
+                </ul>
+            </div>
+            
+            <!-- Coluna 3 -->
+            <div class="footer-contact">
+                <h5>FALE COM A GENTE</h5>
+                <div class="contact-grid">
+                    <a href="https://wa.me/5511972395981" target="_blank" class="contact-item">
+                        <div class="c-icon-box"><i data-lucide="message-circle"></i></div>
+                        <span>WhatsApp</span>
+                    </a>
+                    <a href="tel:+551111972395981" class="contact-item">
+                        <div class="c-icon-box"><i data-lucide="phone"></i></div>
+                        <span>(11) 97239-5981</span>
+                    </a>
+                    <a href="mailto:[EMAIL_ADDRESS]" class="contact-item">
+                        <div class="c-icon-box"><i data-lucide="mail"></i></div>
+                        <span>contato@korefios.com.br</span>
+                    </a>
+                    <!--
+                    <a href="#" target="_blank" class="contact-item">
+                        <div class="c-icon-box">
+                            <div class="c-icon-box">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                                    <path d="M16 11.37a4 4 0 1 1-7.75 1.26 4 4 0 0 1 7.75-1.26z"/>
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                                </svg>
+                            </div></div>
+                        <span>Instagram</span>
+                    </a> -->
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container footer-bottom-container">
+                <p>&copy; 2026 Korefios. Todos os direitos reservados.</p>
+                <a href="#" class="privacy-link">Política de Privacidade</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão WhatsApp Flutuante -->
+    <div class="floating-whatsapp-container">
+        <div class="floating-balloon">Chame no WhatsApp</div>
+
+        <a 
+            href="https://wa.me/5511972395981?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="whatsapp-fab"
+            aria-label="Falar no WhatsApp"
+        >
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="32px" width="32px" xmlns="http://www.w3.org/2000/svg">
+                <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zM223.9 413.6c-33.1 0-65.5-8.9-94-25.7l-6.7-4-69.8 18.3L72 334.3l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.4-186.6 184.4zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3s19.9 53.7 22.6 57.4c2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"></path>
+            </svg>
+        </a>
+    </div>
+
+    <!-- Modal Orçamento -->
+    <div id="quoteModal" class="quote-modal-overlay">
+        <div class="quote-modal">
+            <button class="quote-modal-close" onclick="closeQuoteModal()" aria-label="Fechar">&times;</button>
+            
+            <div class="quote-modal-grid">
+                <div class="quote-form-section">
+                    <h3>Solicite seu orçamento</h3>
+                    <p>Envie sua necessidade e a equipe Korefios entrará em contato.</p>
+                    
+                    <form id="quoteForm" onsubmit="handleQuoteFormSubmit(event)">
+                        <div class="form-group">
+                            <label for="q_name">Nome completo *</label>
+                            <input type="text" id="q_name" required>
+                        </div>
+                        
+                        <div class="form-group-row">
+                            <div class="form-group">
+                                <label for="q_phone">WhatsApp / Telefone *</label>
+                                <input type="tel" id="q_phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="q_email">E-mail</label>
+                                <input type="email" id="q_email">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="q_company">Empresa (opcional)</label>
+                            <input type="text" id="q_company">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="q_message">Mensagem *</label>
+                            <textarea id="q_message" rows="4" placeholder="Descreva sua necessidade (tipo de linha, quantidade, aplicação, etc.)" required></textarea>
+                        </div>
+                        
+                        <div id="quoteFormStatus" class="form-status"></div>
+                        
+                        <button type="submit" id="quoteSubmitBtn" class="btn btn-primary btn-submit-quote">
+                            Enviar solicitação
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="quote-contact-section"> 
+                    <h4>Contato rápido</h4>
+
+                    <div class="quote-contact-info">
+
+                        <div class="qc-item">
+                            <i data-lucide="message-circle"></i>
+                            <a href="https://wa.me/5511972395981?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento." 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            class="contact-link">
+                                <strong>WhatsApp</strong>
+                                <span>(11) 97239-5981</span>
+                            </a>
+                        </div>
+
+                        <div class="qc-item">
+                            <i data-lucide="phone"></i>
+                            <a href="tel:+5511972395981" class="contact-link">
+                                <strong>Telefone</strong>
+                                <span>(11) 97239-5981</span>
+                            </a>
+                        </div>
+
+                        <div class="qc-item">
+                            <i data-lucide="mail"></i>
+                            <a href="mailto:contato@korefios.com.br" class="contact-link">
+                                <strong>E-mail</strong>
+                                <span>contato@korefios.com.br</span>
+                            </a>
+                        </div>
+
+                        <div class="qc-item">
+                            <i data-lucide="map-pin"></i>
+                            <div>
+                                <strong>Endereço</strong>
+                                <span>
+                                    <a href="https://maps.google.com/?q=Rua+Mamoré+353+Bom+Retiro" target="_blank" >
+                                        Rua Mamoré, 353<br>
+                                        Bom Retiro – CEP: 01128-020<br>
+                                        São Paulo – SP
+                                    </a>
+                                </span>
+
+                                <a href="https://maps.google.com/?q=Rua+Mamoré,+353+Bom+Retiro+São+Paulo+SP" 
+                                target="_blank" 
+                                class="maps-inline-link">
+                                Abrir no Google Maps
+                                <i data-lucide="external-link"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js?v=2"></script>
+</body>
+</html>

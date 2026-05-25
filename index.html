@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prince Tower - Negócios, moradia, eventos e lazer em um só lugar</title>
+    <meta name="description" content="O Prince Tower reúne negócios, moradia, eventos e lazer em um só endereço, oferecendo praticidade, conforto e uma experiência completa.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Prince Tower">
+    <meta property="og:description" content="Um empreendimento completo, pensado para oferecer estrutura, praticidade e experiências únicas.">
+    <meta property="og:type" content="website">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/logo-prince-tower-horizontal-colorido.svg" alt="Prince Tower" class="logo-img logo-colorido">
+                    <img src="assets/logo-prince-tower-horizontal-branco.svg" alt="Prince Tower" class="logo-img logo-branco">                    
+                </a>
+            </div>
+            
+            <nav class="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="comercial.html" class="nav-link">Comercial</a></li>
+                    <li><a href="residencial.html" class="nav-link">Residencial</a></li>
+                    <li><a href="eventos.html" class="nav-link">Eventos</a></li>
+                    <li><a href="golf.html" class="nav-link">Golf</a></li>
+                    <li><a href="#sobre" class="nav-link">Sobre</a></li>
+                    <li><a href="contato.html" class="nav-link">Contato</a></li>
+                </ul>
+            </nav>
+
+            <button class="menu-toggle" aria-label="Abrir Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Carrossel Premium -->
+        <section class="hero">
+            <div class="carousel-inner">
+                <!-- Slide 1: Institucional -->
+                <div class="carousel-slide active">
+                    <img src="assets/foto_exemplo_predio.png" alt="Prince Tower" class="slide-bg">
+                    <div class="slide-overlay"></div>
+                    <div class="container hero-container">
+                        <div class="hero-content">
+                            <span class="hero-subtitle">PRINCE TOWER</span>
+                            <h2 class="hero-title">Negócios, moradia, eventos e lazer em <span>um só lugar.</span></h2>
+                            <p class="hero-text">Um empreendimento completo que reúne sofisticação, praticidade e experiências únicas em São Paulo.</p>
+                            <div class="hero-btns">
+                                <a href="#espacos" class="btn btn-primary">Conheça os espaços</a>
+                                <a href="contato.html" class="btn btn-outline-white">Fale conosco</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2: Comercial -->
+                <div class="carousel-slide">
+                    <img src="https://picsum.photos/seed/comercial/1920/1080" alt="Comercial" class="slide-bg">
+                    <div class="slide-overlay"></div>
+                    <div class="container hero-container">
+                        <div class="hero-content">
+                            <span class="hero-subtitle">PRINCE TOWER</span>
+                            <h2 class="hero-title">Salas comerciais para o seu <span>negócio crescer.</span></h2>
+                            <p class="hero-text">Escritórios para locação em um endereço estratégico, com estrutura moderna e fácil acesso.</p>
+                            <div class="hero-btns">
+                                <a href="comercial.html" class="btn btn-primary">Conheça o Comercial</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3: Residencial -->
+                <div class="carousel-slide">
+                    <img src="https://picsum.photos/seed/residencial/1920/1080" alt="Residencial" class="slide-bg">
+                    <div class="slide-overlay"></div>
+                    <div class="container hero-container">
+                        <div class="hero-content">
+                            <span class="hero-subtitle">PRINCE TOWER</span>
+                            <h2 class="hero-title">Apartamentos de 35m² com <span>conforto e praticidade.</span></h2>
+                            <p class="hero-text">Espaços compactos e funcionais para quem busca uma rotina urbana mais sofisticada e dinâmica.</p>
+                            <div class="hero-btns">
+                                <a href="residencial.html" class="btn btn-primary">Conheça o Residencial</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 4: Eventos -->
+                <div class="carousel-slide">
+                    <img src="https://picsum.photos/seed/eventos/1920/1080" alt="Eventos" class="slide-bg">
+                    <div class="slide-overlay"></div>
+                    <div class="container hero-container">
+                        <div class="hero-content">
+                            <span class="hero-subtitle">PRINCE TOWER</span>
+                            <h2 class="hero-title">Ambientes versáteis para <span>eventos inesquecíveis.</span></h2>
+                            <p class="hero-text">Espaços com design refinado preparados para receber eventos corporativos e sociais de alto padrão.</p>
+                            <div class="hero-btns">
+                                <a href="eventos.html" class="btn btn-primary">Conheça Eventos</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 5: Golf -->
+                <div class="carousel-slide">
+                    <img src="https://picsum.photos/seed/golf/1920/1080" alt="Golf" class="slide-bg">
+                    <div class="slide-overlay"></div>
+                    <div class="container hero-container">
+                        <div class="hero-content">
+                            <span class="hero-subtitle">PRINCE TOWER</span>
+                            <h2 class="hero-title">Drive Range completo para a <span>prática de golfe.</span></h2>
+                            <p class="hero-text">Estrutura exclusiva com 100 jardas e 50 baias automatizadas para você aprimorar seu jogo.</p>
+                            <div class="hero-btns">
+                                <a href="golf.html" class="btn btn-primary">Conheça o Golf</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Controles removidos -->
+                
+                <div class="carousel-indicators">
+                    <button class="indicator active" aria-label="Slide 1"></button>
+                    <button class="indicator" aria-label="Slide 2"></button>
+                    <button class="indicator" aria-label="Slide 3"></button>
+                    <button class="indicator" aria-label="Slide 4"></button>
+                    <button class="indicator" aria-label="Slide 5"></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cards Principais -->
+        <section id="espacos" class="container">
+            <div class="cards-intro fade-in-up">
+                <span class="cards-label">EXPERIÊNCIAS PRINCE TOWER</span>
+                <h2 class="cards-title">Um empreendimento, múltiplas possibilidades.</h2>
+            </div>
+            <div class="cards-grid fade-in-up">
+                <!-- Comercial -->
+                <a href="comercial.html" class="main-card open-modal" data-modal="comercial">
+                    <div class="card-img">
+                        <img src="assets/img-sub-hero/comercial.png" alt="Comercial">
+                    </div>
+                    <div class="card-icon icon-navy">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                    </div>
+                    <div class="card-content">
+                        <h3>Comercial</h3>
+                        <p>Salas comerciais funcionais com estrutura pensada para a rotina do seu negócio.</p>
+                        <span class="btn-link">Conheça o Comercial</span>
+                    </div>
+                </a>
+
+                <!-- Residencial -->
+                <a href="residencial.html" class="main-card open-modal" data-modal="residencial">
+                    <div class="card-img">
+                        <img src="assets/img-sub-hero/residencial.png" alt="Residencial">
+                    </div>
+                    <div class="card-icon icon-gold">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                    </div>
+                    <div class="card-content">
+                        <h3>Residencial</h3>
+                        <p>Apartamentos compactos de 35m² pensados para uma rotina prática e funcional.</p>
+                        <span class="btn-link">Conheça o Residencial</span>
+                    </div>
+                </a>
+
+                <!-- Eventos -->
+                <a href="eventos.html" class="main-card open-modal" data-modal="eventos">
+                    <div class="card-img">
+                        <img src="assets/img-sub-hero/eventos.png" alt="Eventos">
+                    </div>
+                    <div class="card-icon icon-navy">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    </div>
+                    <div class="card-content">
+                        <h3>Eventos</h3>
+                        <p>Espaço pensado para receber eventos sociais, corporativos e diversas celebrações.</p>
+                        <span class="btn-link">Conheça Eventos</span>
+                    </div>
+                </a>
+
+                <!-- Golf -->
+                <a href="golf.html" class="main-card open-modal" data-modal="golf">
+                    <div class="card-img">
+                        <img src="assets/img-sub-hero/golf.png" alt="Golf">
+                    </div>
+                    <div class="card-icon icon-gold">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path><line x1="4" y1="22" x2="4" y2="15"></line></svg>
+                    </div>
+                    <div class="card-content">
+                        <h3>Golf</h3>
+                        <p>Drive Range dedicado à prática de golfe, com estrutura moderna e baias automatizadas.</p>
+                        <span class="btn-link">Conheça o Golf</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Sobre / Diferenciais -->
+        <section id="sobre" class="section section-bg-light">
+            <div class="container about-grid fade-in-up">
+                <div class="about-content">
+                    <h5 style="color: var(--secondary-color); margin-bottom: 14px;">UM EMPREENDIMENTO COMPLETO</h5>
+                    <h2>Tudo o que você precisa, em um só endereço.</h2>
+                    <p>O Prince Tower reúne espaços para negócios, moradia, eventos e lazer em uma proposta versátil, pensada para diferentes momentos da sua rotina.</p>
+                    <a href="contato.html" class="btn btn-primary">Fale com nossa equipe</a>
+                </div>
+                
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><path d="M9 17V7h4a3 3 0 0 1 0 6H9"></path></svg></div>
+                        <h4>Estacionamento privativo</h4>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="20" rx="1"></rect><rect x="4" y="10" width="4" height="12" rx="1"></rect><rect x="16" y="14" width="4" height="8" rx="1"></rect></svg></div>
+                        <h4>Estrutura moderna</h4>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg></div>
+                        <h4>Espaços multifuncionais</h4>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></div>
+                        <h4>Segurança e conforto</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Galeria -->
+        <section class="section" style="padding-bottom: 60px;">
+            <div class="container fade-in-up">
+                <h5 style="color: var(--secondary-color); margin-bottom: 8px; text-align: center;">PRINCE TOWER</h5>
+                <h2 class="section-title">Espaços para diferentes momentos</h2>
+                
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="assets/img-galeria/predio2.png" alt="Prince Tower Predio">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/img-galeria/varanda.png" alt="Comercial">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/img-galeria/escritorio.png" alt="Residencial">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/img-galeria/evento2.png" alt="Eventos">
+                    </div>
+                    <!--<div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1200&q=80" alt="Golf">
+                    </div>-->
+                </div>
+                
+                <div style="text-align: center;">
+                    <!-- Placeholder button since there's no dedicated gallery page requested, we can link to contact or keep it visual -->
+                    <a href="contato.html" class="btn btn-outline">SAIBA MAIS SOBRE O PRINCE TOWER</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Localização -->
+        <section class="section section-bg-light" style="padding-top: 60px;">
+            <div class="container fade-in-up">
+                <div class="location-grid">
+                    <div class="location-info">
+                        <h5 class="location-kicker">LOCALIZAÇÃO PRIVILEGIADA</h5>
+                        <h2 class="location-title">Fácil acesso a diferentes regiões de São Paulo</h2>
+                        <p class="location-desc">O Prince Tower está em uma região com fácil acesso, cercado por comércio, serviços e conveniências para diferentes momentos da rotina.</p>
+                        
+                        <ul class="location-benefits">
+                            <li>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--secondary-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                Próximo às principais vias de acesso
+                            </li>
+                            <li>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--secondary-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                Região com comércio e serviços
+                            </li>
+                            <li>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--secondary-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                Facilidade para negócios, moradia e eventos
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="location-map-wrapper">
+                        <a href="https://www.google.com/maps/search/?api=1&query=Rua+Júlio+Conceição+92+Bom+Retiro+São+Paulo" target="_blank" class="location-map-card">
+                            <iframe src="https://maps.google.com/maps?q=Rua%20J%C3%BAlio%20Concei%C3%A7%C3%A3o,%2092,%20Bom%20Retiro,%20S%C3%A3o%20Paulo&t=&z=15&ie=UTF8&iwloc=near&output=embed" width="100%" height="100%" style="border:0; pointer-events: none;" allowfullscreen="" loading="lazy"></iframe>
+                            
+                            <div class="golden-marker">
+                                <svg width="64" height="64" viewBox="0 0 24 24" fill="var(--secondary-color)" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3" fill="#fff"></circle></svg>
+                                <div class="golden-marker-pulse"></div>
+                            </div>
+                            
+                            <div class="map-hover-overlay">
+                                <span class="btn-map">
+                                    Abrir no Google Maps
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Final -->
+        <section class="cta-section fade-in-up">
+            <div class="cta-bg-lines"></div>
+            <div class="container" style="position: relative; z-index: 2;">
+                <div class="cta-grid">
+                    <div class="cta-text">
+                        <h2>Encontre o espaço ideal para você ou para o seu negócio.</h2>
+                        <p>Fale com nossa equipe e descubra todas as possibilidades que o Prince Tower oferece.</p>
+                    </div>
+                    <div class="cta-btns">
+                        <a href="#" class="btn btn-whatsapp">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                            Falar no WhatsApp
+                        </a>
+                        <a href="contato.html" class="btn btn-outline-white">Solicitar informações</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="assets/logo-prince-tower-vertical-colorido.svg" alt="Prince Tower Logo" style="height: 90px; width: auto;">
+                    </div>
+                    <p>Negócios, moradia, eventos e lazer<br>tudo em um só lugar. Um empreendimento completo<br>para viver, trabalhar e celebrar.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Navegação</h4>
+                    <ul class="footer-links">
+                        <li><a href="comercial.html">Comercial</a></li>
+                        <li><a href="residencial.html">Residencial</a></li>
+                        <li><a href="eventos.html">Eventos</a></li>
+                        <li><a href="golf.html">Golf</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contato</h4>
+                    <ul class="contact-info">
+                        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg> <a href="tel:+5511998853020">(11) 99885-3020</a></li>
+                        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg> <a href="mailto:contato@princetower.com.br">contato@princetower.com.br</a></li>
+                        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> <a href="https://www.google.com/maps/search/?api=1&query=Rua+Júlio+Conceição+92+Bom+Retiro+São+Paulo" target="_blank">Rua Júlio Conceição, 92<br>Bom Retiro<br>São Paulo - SP</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Prince Tower. Todos os direitos reservados.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Política de Privacidade</a>
+                    <a href="#">Termos de Uso</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão WhatsApp Flutuante -->
+    <div class="floating-whatsapp-container">
+        <div class="floating-balloon">Chame no WhatsApp</div>
+
+        <a 
+            href="https://wa.me/5511998853020?text=Olá!%20Gostaria%20de%20solicitar%20mais%20informações."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="whatsapp-fab"
+            aria-label="Falar no WhatsApp"
+        >
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="32px" width="32px" xmlns="http://www.w3.org/2000/svg">
+                <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zM223.9 413.6c-33.1 0-65.5-8.9-94-25.7l-6.7-4-69.8 18.3L72 334.3l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.4-186.6 184.4zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3s19.9 53.7 22.6 57.4c2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"></path>
+            </svg>
+        </a>
+    </div>
+
+    <!-- Modal Base (Preenchido via JS) -->
+    <div class="modal-overlay">
+        <div class="modal-container">
+            <button class="modal-close" aria-label="Fechar Modal">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            <div class="modal-body">
+                <img id="modal-img" src="" alt="Imagem" class="modal-img">
+                <div class="modal-content">
+                    <h3 id="modal-title">Título</h3>
+                    <p id="modal-text">Texto descritivo</p>
+                    <ul id="modal-benefits" class="modal-benefits">
+                        <!-- Itens preenchidos via JS -->
+                    </ul>
+                    <div class="modal-actions">
+                        <a href="#" id="modal-link" class="btn btn-primary">Ver página completa</a>
+                        <a href="contato.html" class="btn btn-outline">Fale conosco</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

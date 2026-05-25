@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2138.51 614.48">
+  <defs>
+    <style>
+      .cls-1 {
+        font-family: Bahnschrift, Bahnschrift;
+        font-size: 187px;
+        font-variation-settings: 'wght' 400, 'wdth' 100;
+      }
+
+      .cls-1, .cls-2 {
+        fill: #f8fafc;
+      }
+
+      .cls-3 {
+        letter-spacing: 0em;
+      }
+
+      .cls-4 {
+        letter-spacing: 0em;
+      }
+
+      .cls-5 {
+        letter-spacing: 0em;
+      }
+    </style>
+  </defs>
+  <g>
+    <path class="cls-2" d="M353.13,428.78v159.47h74.83v-161.39c-9.75,4.33-23.99,7.06-39.88,7.06-13.39,0-25.61-1.94-34.95-5.14Z"/>
+    <path class="cls-2" d="M207.27,416.2v172.05h79.17v-158.78c-8.25,2.5-17.53,3.91-27.34,3.91-21.64,0-40.68-6.83-51.83-17.18Z"/>
+    <path class="cls-2" d="M80.43,331.62c47.58,46.74,161.67,79.67,294.88,79.67,154.16,0,265.29-71.9,301.74-115.92-74.89,32.76-184.59,65.35-324.02,67.2-105.63,1.4-199.56-11.97-272.6-30.95Z"/>
+    <rect class="cls-2" x="207.27" y="285.16" width="79.17" height="56.3"/>
+    <path class="cls-2" d="M202.31,36.76c-20.87-1.18-128.42-6.3-160.69-6.08,315.76,37.09,454.94,77.27,454.94,130.76S352.89,253.68,24.73,254.92c76.69,6.77,156.54,10.48,228.28,10.48,239.74,0,390.71-39.52,390.71-98.3S470.82,51.92,202.31,36.76Z"/>
+  </g>
+  <text class="cls-1" transform="translate(756.73 381.53)"><tspan class="cls-3" x="0" y="0">P</tspan><tspan x="114.59" y="0">RIN</tspan><tspan class="cls-5" x="418.92" y="0">C</tspan><tspan x="532.79" y="0">E TO</tspan><tspan class="cls-4" x="905.51" y="0">W</tspan><tspan x="1064.75" y="0">ER</tspan></text>
+</svg>
