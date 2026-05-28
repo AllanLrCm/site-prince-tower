@@ -1257,6 +1257,362 @@ img {
 }
 
 /* ==========================================================================
+   Comercial Modal Specific Premium Style
+   ========================================================================== */
+@keyframes modalImgKenBurns {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+  100% { transform: scale(1); }
+}
+
+.modal-comercial .modal-container,
+.modal-residencial .modal-container,
+.modal-eventos .modal-container,
+.modal-golf .modal-container {
+  border-radius: 12px;
+  border: 1px solid rgba(197, 160, 89, 0.15);
+  box-shadow: 0 24px 60px rgba(17, 34, 51, 0.15);
+}
+
+.modal-comercial .modal-img-container,
+.modal-residencial .modal-img-container,
+.modal-eventos .modal-img-container,
+.modal-golf .modal-img-container {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+}
+
+.modal-comercial .modal-img-container::after,
+.modal-residencial .modal-img-container::after,
+.modal-eventos .modal-img-container::after,
+.modal-golf .modal-img-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(17, 34, 51, 0.05) 0%, rgba(17, 34, 51, 0.2) 60%, rgba(17, 34, 51, 0.45) 100%);
+  pointer-events: none;
+}
+
+.modal-comercial .modal-img,
+.modal-residencial .modal-img,
+.modal-eventos .modal-img,
+.modal-golf .modal-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  filter: contrast(1.15) brightness(0.88) saturate(0.95);
+  animation: modalImgKenBurns 20s ease-in-out infinite;
+}
+
+.modal-comercial .modal-close,
+.modal-residencial .modal-close,
+.modal-eventos .modal-close,
+.modal-golf .modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 30px;
+  height: 30px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 10;
+  color: #fff;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.modal-comercial .modal-close:hover,
+.modal-residencial .modal-close:hover,
+.modal-eventos .modal-close:hover,
+.modal-golf .modal-close:hover {
+  background: #fff;
+  color: var(--primary-color);
+  transform: rotate(90deg);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.modal-comercial .modal-close svg,
+.modal-residencial .modal-close svg,
+.modal-eventos .modal-close svg,
+.modal-golf .modal-close svg {
+  width: 12px;
+  height: 12px;
+}
+
+.modal-comercial .modal-content,
+.modal-residencial .modal-content,
+.modal-eventos .modal-content,
+.modal-golf .modal-content {
+  padding: 28px 40px 40px;
+}
+
+.modal-comercial .modal-content h3,
+.modal-residencial .modal-content h3,
+.modal-eventos .modal-content h3,
+.modal-golf .modal-content h3 {
+  font-size: 2.2rem;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  color: var(--primary-color);
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-comercial .modal-content h3::before,
+.modal-residencial .modal-content h3::before,
+.modal-eventos .modal-content h3::before,
+.modal-golf .modal-content h3::before {
+  content: 'PRINCE TOWER';
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  color: var(--secondary-color);
+  margin-bottom: 12px;
+  font-family: var(--font-text);
+}
+
+.modal-comercial .modal-content > p,
+.modal-residencial .modal-content > p,
+.modal-eventos .modal-content > p,
+.modal-golf .modal-content > p {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--text-light);
+  margin-bottom: 32px;
+  font-weight: 300;
+  max-width: 600px;
+}
+
+.modal-comercial .modal-benefits,
+.modal-residencial .modal-benefits,
+.modal-eventos .modal-benefits,
+.modal-golf .modal-benefits {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+  margin-bottom: 36px;
+}
+
+.modal-comercial .modal-benefits li,
+.modal-residencial .modal-benefits li,
+.modal-eventos .modal-benefits li,
+.modal-golf .modal-benefits li {
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--text-main);
+  background: rgba(197, 160, 89, 0.03);
+  border-left: 3px solid rgba(197, 160, 89, 0.3);
+  padding: 10px 16px;
+  border-radius: 4px;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 2px 4px rgba(17, 34, 51, 0.01);
+}
+
+.modal-comercial .modal-benefits li:hover,
+.modal-residencial .modal-benefits li:hover,
+.modal-eventos .modal-benefits li:hover,
+.modal-golf .modal-benefits li:hover {
+  transform: translateY(-2px);
+  background: rgba(197, 160, 89, 0.06);
+  border-left-color: var(--secondary-color);
+  box-shadow: 0 4px 12px rgba(197, 160, 89, 0.12);
+}
+
+.modal-comercial .modal-benefits li svg,
+.modal-residencial .modal-benefits li svg,
+.modal-eventos .modal-benefits li svg,
+.modal-golf .modal-benefits li svg {
+  color: var(--secondary-color);
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  stroke-width: 1.5;
+}
+
+.modal-comercial .modal-actions,
+.modal-residencial .modal-actions,
+.modal-eventos .modal-actions,
+.modal-golf .modal-actions {
+  display: flex;
+  justify-content: flex-start;
+  gap: 16px;
+  border-top: 1px solid var(--border-color);
+  padding-top: 28px;
+  margin-top: 12px;
+}
+
+.modal-comercial .modal-actions .btn,
+.modal-residencial .modal-actions .btn,
+.modal-eventos .modal-actions .btn,
+.modal-golf .modal-actions .btn {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  padding: 14px 28px;
+  border-radius: 40px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid transparent;
+}
+
+.modal-comercial .modal-actions .btn-primary,
+.modal-residencial .modal-actions .btn-primary,
+.modal-eventos .modal-actions .btn-primary,
+.modal-golf .modal-actions .btn-primary {
+  /* Secondary role: CONHECER COMERCIAL / RESIDENCIAL / EVENTOS / GOLF */
+  background-color: transparent;
+  color: var(--primary-color);
+  border-color: rgba(17, 34, 51, 0.25);
+}
+
+.modal-comercial .modal-actions .btn-primary:hover,
+.modal-residencial .modal-actions .btn-primary:hover,
+.modal-eventos .modal-actions .btn-primary:hover,
+.modal-golf .modal-actions .btn-primary:hover {
+  background-color: #fafafa;
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(17, 34, 51, 0.05);
+}
+
+.modal-comercial .modal-actions .btn-outline,
+.modal-residencial .modal-actions .btn-outline,
+.modal-eventos .modal-actions .btn-outline,
+.modal-golf .modal-actions .btn-outline {
+  /* Primary role: FALE CONOSCO */
+  background-color: var(--primary-color);
+  color: #fff;
+  border-color: var(--primary-color);
+  margin-top: 0;
+}
+
+.modal-comercial .modal-actions .btn-outline:hover,
+.modal-residencial .modal-actions .btn-outline:hover,
+.modal-eventos .modal-actions .btn-outline:hover,
+.modal-golf .modal-actions .btn-outline:hover {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(197, 160, 89, 0.25);
+}
+
+@media (max-width: 600px) {
+  .modal-comercial .modal-benefits,
+  .modal-residencial .modal-benefits,
+  .modal-eventos .modal-benefits,
+  .modal-golf .modal-benefits {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .modal-comercial .modal-content,
+  .modal-residencial .modal-content,
+  .modal-eventos .modal-content,
+  .modal-golf .modal-content {
+    padding: 24px;
+  }
+}
+
+/* ==========================================================================
+   Golf Experience Section (Popup Golf Only)
+   ========================================================================== */
+.golf-experience-section {
+  margin-top: 32px;
+  margin-bottom: 36px;
+}
+
+.golf-experience-title {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  color: var(--secondary-color);
+  margin-bottom: 16px;
+  font-family: var(--font-text);
+  text-transform: uppercase;
+}
+
+.golf-experience-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.golf-experience-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(197, 160, 89, 0.03);
+  border: 1px solid rgba(197, 160, 89, 0.1);
+  border-left: 3px solid rgba(197, 160, 89, 0.3);
+  border-radius: 4px;
+  padding: 16px 20px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 2px 4px rgba(17, 34, 51, 0.01);
+}
+
+.golf-experience-card:hover {
+  transform: translateY(-2px);
+  background: rgba(197, 160, 89, 0.06);
+  border-left-color: var(--secondary-color);
+  box-shadow: 0 4px 12px rgba(197, 160, 89, 0.12);
+}
+
+.golf-card-info h5 {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--primary-color);
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+
+.golf-card-info span {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  font-weight: 400;
+}
+
+.golf-card-info span.highlight {
+  color: var(--secondary-color);
+  font-weight: 500;
+}
+
+.golf-card-price {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--secondary-color);
+  font-family: var(--font-title);
+  letter-spacing: -0.01em;
+  margin-left: 12px;
+}
+
+@media (max-width: 768px) {
+  .golf-experience-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+/* ==========================================================================
    WhatsApp Floating + Balão
    ========================================================================== */
 .floating-whatsapp-container {

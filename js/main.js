@@ -106,49 +106,49 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalData = {
     comercial: {
       title: 'Comercial',
-      image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80',
-      text: 'Salas comerciais modernas e funcionais para impulsionar seu negócio no Prince Tower.',
+      image: 'assets/img-hero/hero-carrossel-comercial.png',
+      text: 'Espaços comerciais planejados para empresas que buscam praticidade, visibilidade e uma estrutura profissional no Prince Tower.',
       benefits: [
         'Salas para locação',
-        'Ambiente profissional',
+        'Espaços adaptáveis para diferentes negócios',
         'Localização estratégica',
-        'Estrutura moderna'
+        'Estrutura ideal para atendimento e serviços'
       ],
       link: 'comercial.html'
     },
     residencial: {
       title: 'Residencial',
-      image: 'https://images.unsplash.com/photo-1502672260266-1c1e52db0622?auto=format&fit=crop&w=800&q=80',
-      text: 'Apartamentos de 35m² com conforto, praticidade e excelente localização.',
+      image: 'assets/img-hero/hero-carrossel-residencial.png',
+      text: 'Apartamentos planejados para quem busca conforto, praticidade e uma experiência urbana no Prince Tower.',
       benefits: [
         'Apartamentos de 35m²',
-        'Espaços funcionais',
+        'Espaços inteligentes e funcionais',
         'Conforto para o dia a dia',
-        'Praticidade urbana'
+        'Mobilidade e praticidade urbana'
       ],
       link: 'residencial.html'
     },
     eventos: {
       title: 'Eventos',
-      image: 'https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=800&q=80',
-      text: 'Espaços versáteis e elegantes para eventos corporativos e sociais.',
+      image: 'assets/img-hero/hero-carrossel-evento.png',
+      text: 'Espaços planejados para experiências sociais e corporativas, praticidade e atmosfera premium no Prince Tower.',
       benefits: [
-        'Ambientes versáteis',
-        'Estrutura elegante',
-        'Ideal para eventos',
-        'Suporte no local'
+        'Espaços versáteis para diferentes eventos',
+        'Estrutura elegante e funcional',
+        'Atmosfera sofisticada e contemporânea',
+        'Ideal para eventos sociais e experiências exclusivas'
       ],
       link: 'eventos.html'
     },
     golf: {
       title: 'Golf',
-      image: 'https://images.unsplash.com/photo-1535136104956-613d5cf599fd?auto=format&fit=crop&w=800&q=80',
-      text: 'Drive Range de 100 jardas com 50 baias automatizadas para aprimorar seu jogo.',
+      image: 'assets/img-hero/hero-carrossel-golf.png',
+      text: 'Drive Range de 100 jardas com 50 baias automatizadas para aprimorar seu jogo com tecnologia e conforto.',
       benefits: [
         'Drive Range de 100 jardas',
         '50 baias automatizadas',
-        'Ambiente iluminado',
-        'Equipe treinada'
+        'Ambiente iluminado e climatizado',
+        'Experiência premium para aprimorar seu desempenho'
       ],
       link: 'golf.html'
     }
@@ -169,8 +169,72 @@ document.addEventListener('DOMContentLoaded', () => {
       li.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> ${benefit}`;
       benefitsList.appendChild(li);
     });
+
+    // Populate extra section for Golf tickets
+    const extraSection = document.getElementById('modal-extra-section');
+    if (extraSection) {
+      if (type === 'golf') {
+        extraSection.innerHTML = `
+          <div class="golf-experience-section">
+              <h4 class="golf-experience-title">EXPERIÊNCIA GOLF</h4>
+              <div class="golf-experience-grid">
+                  <div class="golf-experience-card">
+                      <div class="golf-card-info">
+                          <h5>Balde com 120 bolinhas</h5>
+                          <span>01 ticket</span>
+                      </div>
+                      <div class="golf-card-price">
+                          R$ 65,00
+                      </div>
+                  </div>
+                  <div class="golf-experience-card">
+                      <div class="golf-card-info">
+                          <h5>Pacote com 20 tickets</h5>
+                          <span class="highlight">Melhor custo-benefício</span>
+                      </div>
+                      <div class="golf-card-price">
+                          R$ 1.000,00
+                      </div>
+                  </div>
+              </div>
+          </div>
+        `;
+      } else {
+        extraSection.innerHTML = '';
+      }
+    }
     
-    document.getElementById('modal-link').href = data.link;
+    const mainBtn = document.getElementById('modal-link');
+    mainBtn.href = data.link;
+    
+    const secondaryBtn = document.querySelector('.modal-actions .btn-outline');
+    
+    if (type === 'comercial') {
+      mainBtn.textContent = 'CONHECER COMERCIAL';
+      if (secondaryBtn) {
+        secondaryBtn.textContent = 'FALE CONOSCO';
+      }
+    } else if (type === 'residencial') {
+      mainBtn.textContent = 'CONHECER RESIDENCIAL';
+      if (secondaryBtn) {
+        secondaryBtn.textContent = 'FALE CONOSCO';
+      }
+    } else if (type === 'eventos') {
+      mainBtn.textContent = 'CONHECER EVENTOS';
+      if (secondaryBtn) {
+        secondaryBtn.textContent = 'FALE CONOSCO';
+      }
+    } else if (type === 'golf') {
+      mainBtn.textContent = 'CONHECER GOLF';
+      if (secondaryBtn) {
+        secondaryBtn.textContent = 'FALE CONOSCO';
+      }
+    } else {
+      mainBtn.textContent = 'Ver página completa';
+      if (secondaryBtn) {
+        secondaryBtn.textContent = 'Fale conosco';
+      }
+    }
   };
 
   const openModal = (e) => {
@@ -179,6 +243,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const type = e.currentTarget.getAttribute('data-modal');
     if (type && modalOverlay) {
       populateModal(type);
+      modalOverlay.classList.remove('modal-comercial', 'modal-residencial', 'modal-eventos', 'modal-golf');
+      if (type === 'comercial') {
+        modalOverlay.classList.add('modal-comercial');
+      } else if (type === 'residencial') {
+        modalOverlay.classList.add('modal-residencial');
+      } else if (type === 'eventos') {
+        modalOverlay.classList.add('modal-eventos');
+      } else if (type === 'golf') {
+        modalOverlay.classList.add('modal-golf');
+      }
       modalOverlay.classList.add('active');
       document.body.style.overflow = 'hidden'; // Prevent scrolling
     }
@@ -186,7 +260,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const closeModal = () => {
     if (modalOverlay) {
-      modalOverlay.classList.remove('active');
+      modalOverlay.classList.remove('active', 'modal-comercial', 'modal-residencial', 'modal-eventos', 'modal-golf');
       document.body.style.overflow = '';
     }
   };
