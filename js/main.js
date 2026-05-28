@@ -355,10 +355,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Dynamic YouTube Embed play interaction (Tour Residencial)
   const btnPlayTour = document.getElementById('btn-play-tour');
-  const btnTextPlayTour = document.getElementById('btn-text-play-tour');
   const videoTourContainer = document.getElementById('video-tour-container');
 
-  if (videoTourContainer && (btnPlayTour || btnTextPlayTour)) {
+  if (videoTourContainer && btnPlayTour) {
     const playVideo = () => {
       videoTourContainer.innerHTML = `
         <div class="video-tour-embed-wrapper">
@@ -376,11 +375,6 @@ document.addEventListener('DOMContentLoaded', () => {
       `;
     };
 
-    if (btnPlayTour) {
-      btnPlayTour.addEventListener('click', playVideo);
-    }
-    if (btnTextPlayTour) {
-      btnTextPlayTour.addEventListener('click', playVideo);
-    }
+    btnPlayTour.addEventListener('click', playVideo);
   }
 });
