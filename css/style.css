@@ -1613,63 +1613,365 @@ img {
 }
 
 /* ==========================================================================
-   WhatsApp Floating + Balão
+   Residencial Tour Section (Popup Residencial Only)
    ========================================================================== */
-.floating-whatsapp-container {
+.residencial-tour-section {
+  margin-top: 32px;
+  margin-bottom: 36px;
+}
+
+.residencial-tour-title {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  color: var(--secondary-color);
+  margin-bottom: 16px;
+  font-family: var(--font-text);
+  text-transform: uppercase;
+}
+
+.residencial-tour-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(197, 160, 89, 0.03);
+  border: 1px solid rgba(197, 160, 89, 0.1);
+  border-left: 3px solid rgba(197, 160, 89, 0.3);
+  border-radius: 4px;
+  padding: 16px 20px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 2px 4px rgba(17, 34, 51, 0.01);
+  text-decoration: none;
+  width: 100%;
+}
+
+.residencial-tour-card:hover {
+  transform: translateY(-2px);
+  background: rgba(197, 160, 89, 0.06);
+  border-left-color: var(--secondary-color);
+  box-shadow: 0 8px 24px rgba(197, 160, 89, 0.12);
+}
+
+.tour-card-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.tour-play-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 1px solid rgba(197, 160, 89, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--secondary-color);
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(197, 160, 89, 0.1);
+}
+
+.tour-play-icon svg {
+  margin-left: 2px; /* Ajuste visual para alinhar o triângulo do play */
+}
+
+.residencial-tour-card:hover .tour-play-icon {
+  background-color: var(--secondary-color);
+  color: #ffffff;
+  border-color: var(--secondary-color);
+  transform: scale(1.05);
+}
+
+.tour-card-info h5 {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--primary-color);
+  margin: 0;
+  line-height: 1.4;
+  text-align: left;
+}
+
+.tour-card-cta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--secondary-color);
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.tour-card-cta svg {
+  transition: transform 0.3s ease;
+}
+
+.residencial-tour-card:hover .tour-card-cta svg {
+  transform: translateX(4px);
+}
+
+@media (max-width: 600px) {
+  .residencial-tour-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .tour-card-cta {
+    align-self: flex-end;
+  }
+}
+
+/* ==========================================================================
+   Floating Contact Hub Premium
+   ========================================================================== */
+/* ==========================================================================
+   Floating Contact Hub Premium
+   ========================================================================== */
+.contact-hub-container {
   position: fixed;
   bottom: 24px;
   right: 24px;
   z-index: 1500;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-text);
+}
+
+.contact-hub-trigger-wrapper {
+  display: flex;
+  flex-direction: column; /* Coloca a label acima do botão na ordem do HTML */
+  align-items: center;
   gap: 10px;
-}
-
-.floating-balloon {
-  background-color: var(--bg-light);
-  color: var(--text-main);
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   position: relative;
-  animation: bounce 2s infinite;
 }
 
-.floating-balloon::after {
-  content: '';
-  position: absolute;
-  bottom: -6px;
-  right: 20px;
-  width: 12px;
-  height: 12px;
-  background-color: var(--bg-light);
-  transform: rotate(45deg);
+.contact-hub-label {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: var(--primary-color);
+  border: 1px solid rgba(17, 34, 51, 0.08);
+  padding: 6px 14px;
+  border-radius: 16px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  box-shadow: 0 4px 16px rgba(17, 34, 51, 0.06);
+  white-space: nowrap;
+  animation: labelEntranceTop 0.8s cubic-bezier(0.16, 1, 0.3, 1) both, 
+             labelFloatPremiumTop 5s ease-in-out infinite 0.8s;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform-origin: bottom center;
 }
 
-.whatsapp-fab {
-  width: 60px;
-  height: 60px;
-  background-color: #25d366;
-  color: white;
+/* Esconder e mover a label suavemente quando o painel estiver aberto */
+.contact-hub-trigger-wrapper:has(.contact-hub-btn[aria-expanded="true"]) .contact-hub-label {
+  opacity: 0 !important;
+  transform: translateY(10px) scale(0.9) !important;
+  pointer-events: none !important;
+  animation: none !important; /* Interrompe a animação para não sobrepor */
+}
+
+.contact-hub-btn {
+  width: 56px;
+  height: 56px;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border: 1px solid rgba(197, 160, 89, 0.35); /* Destaque dourado sutil na borda */
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-  transition: var(--transition);
+  box-shadow: 0 8px 24px rgba(17, 34, 51, 0.25), 0 0 15px rgba(197, 160, 89, 0.15); /* Glow discreto dourado/navy inicial */
+  cursor: pointer;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  outline: none;
+  animation: premiumButtonGlowPulse 4s infinite ease-in-out;
 }
 
-.whatsapp-fab:hover {
-  transform: scale(1.1);
-  color: white;
+.contact-hub-btn:hover {
+  transform: translateY(-3px);
+  border-color: var(--secondary-hover);
+  box-shadow: 0 12px 32px rgba(197, 160, 89, 0.3), 0 0 20px rgba(197, 160, 89, 0.25);
 }
 
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-5px); }
+.contact-hub-btn svg {
+  transition: transform 0.4s ease;
+}
+
+.contact-hub-btn[aria-expanded="true"] svg {
+  transform: rotate(45deg);
+}
+
+.contact-hub-btn .btn-glow {
+  display: none; /* Removed the old intrusive expanding animation */
+}
+
+.contact-hub-btn .btn-dot {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 11px;
+  height: 11px;
+  background-color: var(--secondary-color);
+  border-radius: 50%;
+  border: 2px solid var(--primary-color);
+  box-shadow: 0 0 10px rgba(197, 160, 89, 0.8);
+  animation: goldBadgePulse 2.5s infinite ease-in-out;
+}
+
+@keyframes premiumButtonGlowPulse {
+  0%, 100% {
+    box-shadow: 0 8px 24px rgba(17, 34, 51, 0.25), 0 0 12px rgba(197, 160, 89, 0.12);
+  }
+  50% {
+    box-shadow: 0 8px 28px rgba(17, 34, 51, 0.3), 0 0 20px rgba(197, 160, 89, 0.22);
+    border-color: rgba(197, 160, 89, 0.5);
+  }
+}
+
+@keyframes goldBadgePulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 4px rgba(197, 160, 89, 0.6);
+  }
+  50% {
+    transform: scale(1.2);
+    box-shadow: 0 0 12px rgba(197, 160, 89, 0.95);
+  }
+}
+
+@keyframes labelEntranceTop {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes labelFloatPremiumTop {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-4px) scale(1.02);
+  }
+}
+
+.contact-hub-panel {
+  position: absolute;
+  bottom: 72px;
+  right: 0;
+  width: 290px;
+  background-color: #ffffff;
+  border: 1px solid rgba(197, 160, 89, 0.15);
+  border-radius: 12px;
+  box-shadow: 0 16px 40px rgba(17, 34, 51, 0.12);
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px) scale(0.97);
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+              visibility 0.35s;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .contact-hub-label {
+    display: none;
+  }
+}
+
+.contact-hub-panel.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.contact-hub-header {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.20em;
+  color: var(--secondary-color);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.contact-hub-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact-hub-option {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  background-color: rgba(17, 34, 51, 0.02);
+  border: 1px solid rgba(17, 34, 51, 0.05);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.contact-hub-option:hover {
+  background-color: rgba(197, 160, 89, 0.05);
+  border-color: rgba(197, 160, 89, 0.3);
+  transform: translateY(-2px);
+}
+
+.contact-hub-option .option-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--secondary-color);
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.contact-hub-option:hover .option-icon {
+  background-color: var(--secondary-color);
+  color: #ffffff;
+  border-color: var(--secondary-color);
+}
+
+.contact-hub-option .option-details h4 {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--primary-color);
+  margin-bottom: 2px;
+}
+
+.contact-hub-option .option-details p {
+  font-size: 0.78rem;
+  color: var(--text-light);
+  margin: 0;
+  line-height: 1.3;
+}
+
+@media (max-width: 480px) {
+  .contact-hub-panel {
+    right: -10px;
+    width: 280px;
+  }
 }
 /* Internal Pages Hero */
 .page-hero {
@@ -1693,6 +1995,384 @@ img {
   inset: 0;
   background: rgba(17, 34, 51, 0.7);
 }
+
+/* ==========================================================================
+   Refined Commercial Page Hero Layout (Apple / Vercel Editorial Style)
+   ========================================================================== */
+.commercial-hero {
+  justify-content: flex-start;
+  text-align: left;
+  min-height: 520px;
+  padding-bottom: 0; /* Reset bottom offset to allow vertical centering/lowering */
+}
+
+.commercial-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  /* Cinematic dark navy gradient: Deeper navy blue tones, graphite shadows, cleaner readability on left side */
+  background: linear-gradient(to right, 
+    rgba(17, 34, 51, 0.88) 0%, 
+    rgba(17, 34, 51, 0.8) 45%, 
+    rgba(17, 32, 48, 0.55) 70%, 
+    rgba(17, 32, 48, 0.35) 100%
+  );
+  z-index: 1;
+}
+
+.commercial-hero .container {
+  z-index: 2;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.hero-commercial-content {
+  max-width: 620px; /* Narrower text width for a more refined reading experience */
+  margin-top: 5px; /* Restored elegant editorial balance by moving the block downward (approx 35px shift from -30px) */
+}
+
+.commercial-kicker {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.32em; /* Increased letter spacing/tracking */
+  color: var(--secondary-color);
+  margin-bottom: 18px;
+  text-transform: uppercase;
+  font-family: var(--font-text);
+  opacity: 0.95;
+}
+
+.commercial-hero h1 {
+  font-size: 2.85rem; /* Slightly reduced headline size (from 3.25rem) for a more elegant look */
+  font-weight: 300; /* Light, elegant typography */
+  line-height: 1.25;
+  color: #ffffff;
+  margin-bottom: 22px;
+  letter-spacing: -0.015em;
+}
+
+.commercial-subheadline {
+  font-size: 1.05rem; /* Slightly lighter visual weight */
+  font-weight: 300;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.72); /* Softened subtitle opacity */
+  margin-bottom: 36px;
+  letter-spacing: 0.01em;
+}
+
+/* Ensure button in commercial hero matches homepage hero button style (rounded border-radius: 40px, same padding and hover) */
+.commercial-hero-action .btn.btn-outline-white {
+  padding: 12px 32px;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  border-radius: 40px !important;
+  border: 1px solid rgba(255,255,255,0.6);
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  box-shadow: none;
+  transition: all 0.3s ease;
+  color: #fff;
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+.commercial-hero-action .btn.btn-outline-white:hover {
+  background: rgba(255,255,255,1);
+  color: var(--primary-color) !important;
+  border-color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+@media (max-width: 768px) {
+  .commercial-hero {
+    min-height: 460px;
+    text-align: center;
+    justify-content: center;
+    padding-bottom: 0;
+  }
+  .commercial-hero::before {
+    background: rgba(17, 34, 51, 0.85); /* fallback full overlay for mobile screens */
+  }
+  .commercial-hero h1 {
+    font-size: 2.15rem;
+  }
+  .commercial-subheadline {
+    font-size: 0.95rem;
+  }
+  .hero-commercial-content {
+    margin-top: 0;
+  }
+}
+
+/* ==========================================================================
+   Refined Commercial Info Section Styles
+   ========================================================================== */
+.commercial-info-section {
+  background-color: #F7F7F5; /* Soft, warm architectural off-white luxury background */
+  padding: 130px 0; /* Significant vertical breathing space */
+  position: relative;
+  /* Premium transition: Faint cinematic shadow blend to smooth transition from dark hero */
+  box-shadow: inset 0 25px 35px -20px rgba(17, 34, 51, 0.12); 
+}
+
+/* Subtle visual accent line linking it with the hero above */
+.commercial-info-divider {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background-color: var(--secondary-color);
+  opacity: 0.25;
+}
+
+.commercial-info-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr; /* Shifted grid proportions for a more fluid balance */
+  gap: 84px; /* Even more breathing room between columns */
+  align-items: center;
+}
+
+.commercial-info-main {
+  text-align: left;
+}
+
+.commercial-info-kicker {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  color: var(--secondary-color);
+  margin-top: 12px; /* Move kicker subtly downward for breathing room */
+  margin-bottom: 18px; /* Increased spacing below kicker */
+  text-transform: uppercase;
+}
+
+.commercial-info-main h2 {
+  font-size: 2.3rem; /* Spacious modern title */
+  font-weight: 300;
+  line-height: 1.28;
+  color: var(--primary-color);
+  margin-bottom: 24px;
+  letter-spacing: -0.015em;
+}
+
+.commercial-info-main p {
+  color: var(--text-light);
+  font-size: 1.025rem; /* Calm typography */
+  line-height: 1.75;
+  font-weight: 300;
+  margin: 0;
+  max-width: 530px; /* Limits the paragraph width for a calmer reading rhythm */
+}
+
+/* Thinner, elegant, checklist column */
+.commercial-info-benefits {
+  margin-top: 30px; /* Lower the entire right checklist column for vertical editorial balance */
+}
+
+.commercial-benefits-list-refined {
+  display: flex;
+  flex-direction: column;
+  gap: 28px; /* Slightly increased vertical list spacing for a softer, calmer vertical rhythm */
+}
+
+.commercial-benefits-list-refined li {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px; /* Softer, elegant spacing between icon and text */
+  color: var(--text-main);
+  text-align: left;
+}
+
+.commercial-benefits-list-refined li svg {
+  color: var(--secondary-color);
+  flex-shrink: 0;
+  margin-top: 4px; /* aligned visually with first line of text */
+  opacity: 0.9;
+}
+
+.commercial-benefits-list-refined li span {
+  font-size: 0.95rem; /* Lighter visual structure */
+  font-weight: 400;
+  line-height: 1.45;
+  color: var(--primary-color);
+  letter-spacing: 0.01em;
+}
+
+@media (max-width: 992px) {
+  .commercial-info-section {
+    padding: 90px 0;
+  }
+  .commercial-info-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .commercial-info-main p {
+    max-width: 100%;
+  }
+}
+
+/* ==========================================================================
+   Refined Commercial Gallery Overrides
+   ========================================================================== */
+.gallery-title-refined {
+  font-size: 2.25rem !important; /* Slightly reduced size (approx 10% less than standard 2.5rem) */
+  font-weight: 300 !important; /* Lighter, elegant editorial weight */
+  letter-spacing: -0.01em !important;
+}
+
+.gallery-item-refined {
+  border-radius: 8px !important; /* Refined visual border radius (avoiding card-like excessive rounding) */
+}
+
+/* ==========================================================================
+   Refined Video Tour Section
+   ========================================================================== */
+.video-tour-thumbnail-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.video-tour-trigger {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+}
+
+.video-tour-image-container {
+  position: relative;
+  width: 100%;
+  height: 340px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(17, 34, 51, 0.06);
+  background-color: var(--primary-color);
+}
+
+.video-tour-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.video-tour-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(17, 34, 51, 0.45); /* Soft dark navy overlay */
+  transition: background-color 0.4s ease;
+  z-index: 2;
+}
+
+.video-tour-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: var(--secondary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(17, 34, 51, 0.15);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 3;
+}
+
+.video-tour-play-btn svg {
+  margin-left: 3px; /* visual play alignment */
+  transition: transform 0.4s ease;
+}
+
+/* Hover effects */
+.video-tour-trigger:hover .video-tour-image-container img {
+  transform: scale(1.04); /* Gentle internal zoom */
+}
+
+.video-tour-trigger:hover .video-tour-overlay {
+  background: rgba(17, 34, 51, 0.35); /* Lighter on hover */
+}
+
+.video-tour-trigger:hover .video-tour-play-btn {
+  transform: translate(-50%, -50%) scale(1.08);
+  box-shadow: 0 8px 24px rgba(197, 160, 89, 0.3);
+  color: #ffffff;
+  background-color: var(--secondary-color);
+}
+
+/* Iframe Embed responsive container matching thumbnail style */
+.video-tour-embed-wrapper {
+  position: relative;
+  width: 100%;
+  height: 340px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(17, 34, 51, 0.08);
+  background-color: #000000;
+  animation: videoFadeIn 0.5s ease-out forwards;
+}
+
+.video-tour-embed-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+@keyframes videoFadeIn {
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Button overrides for video tour CTA */
+.btn-video-tour-cta {
+  border-color: var(--primary-color) !important;
+  color: var(--primary-color) !important;
+  border-radius: 40px !important;
+  padding: 12px 32px !important;
+  font-size: 0.85rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.1em !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  display: inline-block;
+  transition: all 0.3s ease !important;
+  cursor: pointer;
+  font-family: var(--font-text);
+  border: 1px solid var(--primary-color);
+}
+
+.btn-video-tour-cta:hover {
+  background: var(--primary-color) !important;
+  color: #ffffff !important;
+  border-color: var(--primary-color) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(17, 34, 51, 0.1) !important;
+}
+
+@media (max-width: 992px) {
+  .video-tour-image-container,
+  .video-tour-embed-wrapper {
+    height: 280px;
+  }
+}
+
+
 
 .page-hero .container {
   position: relative;
@@ -1919,4 +2599,64 @@ textarea.form-control {
   .modal-actions .btn {
     width: 100%;
   }
+}
+
+/* ==========================================================================
+   Floating WhatsApp Button (Commercial Page Only)
+   ========================================================================== */
+.floating-whatsapp-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1500;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-text);
+}
+
+.floating-balloon {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: var(--primary-color);
+  border: 1px solid rgba(17, 34, 51, 0.08);
+  padding: 6px 14px;
+  border-radius: 16px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  box-shadow: 0 4px 16px rgba(17, 34, 51, 0.06);
+  white-space: nowrap;
+  pointer-events: none;
+  animation: labelFloatPremiumTop 4s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+.whatsapp-fab {
+  width: 56px;
+  height: 56px;
+  background-color: #25D366; /* Official WhatsApp Green */
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+}
+
+.whatsapp-fab:hover {
+  transform: scale(1.08) translateY(-2px);
+  box-shadow: 0 12px 28px rgba(37, 211, 102, 0.5);
+  background-color: #20ba5a; /* Slightly darker green hover */
+}
+
+.whatsapp-fab svg {
+  fill: currentColor;
+  display: block;
 }

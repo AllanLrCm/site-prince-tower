@@ -170,7 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
       benefitsList.appendChild(li);
     });
 
-    // Populate extra section for Golf tickets
+    // Populate extra section for Golf tickets and Residencial Tour
     const extraSection = document.getElementById('modal-extra-section');
     if (extraSection) {
       if (type === 'golf') {
@@ -197,6 +197,26 @@ document.addEventListener('DOMContentLoaded', () => {
                       </div>
                   </div>
               </div>
+          </div>
+        `;
+      } else if (type === 'residencial') {
+        extraSection.innerHTML = `
+          <div class="residencial-tour-section">
+              <h4 class="residencial-tour-title">TOUR RESIDENCIAL</h4>
+              <a href="https://youtu.be/8GEZZsxi5VA?si=oqwt-jdyJ3TgzH4v" target="_blank" rel="noopener noreferrer" class="residencial-tour-card">
+                  <div class="tour-card-left">
+                      <div class="tour-play-icon">
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                      </div>
+                      <div class="tour-card-info">
+                          <h5>Conheça os ambientes do residencial Prince Tower em vídeo.</h5>
+                      </div>
+                  </div>
+                  <div class="tour-card-cta">
+                      <span>Assistir apresentação</span>
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                  </div>
+              </a>
           </div>
         `;
       } else {
@@ -299,4 +319,68 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const animatedElements = document.querySelectorAll('.fade-in-up');
   animatedElements.forEach(el => observer.observe(el));
+
+  // Contact Hub Toggle
+  const contactHubBtn = document.getElementById('contact-hub-btn');
+  const contactHubPanel = document.getElementById('contact-hub-panel');
+  const contactHubLabel = document.querySelector('.contact-hub-label');
+
+  if (contactHubBtn && contactHubPanel) {
+    const togglePanel = () => {
+      const isVisible = contactHubPanel.classList.contains('active');
+      if (isVisible) {
+        contactHubPanel.classList.remove('active');
+        contactHubBtn.setAttribute('aria-expanded', 'false');
+        if (contactHubLabel) contactHubLabel.style.opacity = '1';
+      } else {
+        contactHubPanel.classList.add('active');
+        contactHubBtn.setAttribute('aria-expanded', 'true');
+        if (contactHubLabel) contactHubLabel.style.opacity = '0';
+      }
+    };
+
+    contactHubBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      togglePanel();
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!contactHubPanel.contains(e.target) && e.target !== contactHubBtn && !contactHubBtn.contains(e.target)) {
+        contactHubPanel.classList.remove('active');
+        contactHubBtn.setAttribute('aria-expanded', 'false');
+        if (contactHubLabel) contactHubLabel.style.opacity = '1';
+      }
+    });
+  }
+
+  // Dynamic YouTube Embed play interaction (Tour Residencial)
+  const btnPlayTour = document.getElementById('btn-play-tour');
+  const btnTextPlayTour = document.getElementById('btn-text-play-tour');
+  const videoTourContainer = document.getElementById('video-tour-container');
+
+  if (videoTourContainer && (btnPlayTour || btnTextPlayTour)) {
+    const playVideo = () => {
+      videoTourContainer.innerHTML = `
+        <div class="video-tour-embed-wrapper">
+          <iframe 
+            width="560" 
+            height="315" 
+            src="https://www.youtube-nocookie.com/embed/8GEZZsxi5VA?autoplay=1" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen>
+          </iframe>
+        </div>
+      `;
+    };
+
+    if (btnPlayTour) {
+      btnPlayTour.addEventListener('click', playVideo);
+    }
+    if (btnTextPlayTour) {
+      btnTextPlayTour.addEventListener('click', playVideo);
+    }
+  }
 });
