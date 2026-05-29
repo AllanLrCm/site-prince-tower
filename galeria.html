@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria - Prince Tower</title>
+    <meta name="description" content="Explore a galeria oficial de fotos do Prince Tower. Conheça nossa estrutura comercial, residencial, espaços de eventos e lazer.">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* CSS específico e isolado para a página de Galeria */
+        .gallery-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 3.5rem;
+        }
+        
+        .filter-btn {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-family: var(--font-text);
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--text-light);
+            cursor: pointer;
+            transition: var(--transition);
+            outline: none;
+        }
+        
+        .filter-btn:hover {
+            border-color: var(--secondary-color);
+            color: var(--primary-color);
+        }
+        
+        .filter-btn.active {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: #ffffff;
+        }
+        
+        .gallery-masonry {
+            columns: 3 300px;
+            column-gap: 24px;
+            width: 100%;
+        }
+        
+        .gallery-masonry-item {
+            display: inline-block;
+            width: 100%;
+            margin-bottom: 24px;
+            break-inside: avoid;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            background-color: #fff;
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        
+        .gallery-masonry-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--secondary-color);
+        }
+        
+        .gallery-masonry-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-masonry-item:hover img {
+            transform: scale(1.03);
+        }
+
+        .gallery-item-info {
+            padding: 14px 18px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .gallery-item-info h4 {
+            font-size: 0.95rem;
+            color: var(--primary-color);
+            font-weight: 500;
+            margin: 0;
+            letter-spacing: 0.01em;
+        }
+
+        /* Lightbox Premium Style */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background-color: rgba(17, 34, 51, 0.96);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 2500;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .lightbox.active {
+            display: flex;
+            opacity: 1;
+        }
+        
+        .lightbox-content {
+            position: relative;
+            max-width: 90vw;
+            max-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .lightbox-img {
+            max-width: 100%;
+            max-height: 75vh;
+            object-fit: contain;
+            border-radius: 6px;
+            box-shadow: 0 16px 48px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .lightbox-title {
+            color: #ffffff;
+            font-family: var(--font-text);
+            font-size: 0.9rem;
+            margin-top: 18px;
+            font-weight: 400;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+        
+        .lightbox-close {
+            position: absolute;
+            top: -48px;
+            right: 0;
+            background: none;
+            border: none;
+            color: #ffffff;
+            font-size: 2.2rem;
+            cursor: pointer;
+            transition: var(--transition);
+            opacity: 0.7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            outline: none;
+        }
+        
+        .lightbox-close:hover {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+        
+        .lightbox-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            z-index: 2600;
+            outline: none;
+        }
+        
+        .lightbox-arrow:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: #ffffff;
+        }
+        
+        .lightbox-arrow.prev {
+            left: -80px;
+        }
+        
+        .lightbox-arrow.next {
+            right: -80px;
+        }
+        
+        @media (max-width: 1024px) {
+            .lightbox-arrow.prev {
+                left: -60px;
+            }
+            
+            .lightbox-arrow.next {
+                right: -60px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .gallery-filters {
+                gap: 8px;
+                margin-bottom: 2.5rem;
+            }
+            .filter-btn {
+                padding: 8px 18px;
+                font-size: 0.8rem;
+            }
+            .gallery-masonry {
+                columns: 1;
+                column-gap: 0;
+            }
+            .lightbox-arrow.prev {
+                left: 16px;
+                top: auto;
+                bottom: -70px;
+                transform: none;
+            }
+            .lightbox-arrow.next {
+                right: 16px;
+                top: auto;
+                bottom: -70px;
+                transform: none;
+            }
+            .lightbox-close {
+                right: 0;
+                top: -50px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/logo-prince-tower-horizontal-colorido.svg" alt="Prince Tower" class="logo-img logo-colorido">
+                    <img src="assets/logo-prince-tower-horizontal-branco.svg" alt="Prince Tower" class="logo-img logo-branco">                    
+                </a>
+            </div>
+            
+            <nav class="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="comercial.html" class="nav-link">Comercial</a></li>
+                    <li><a href="residencial.html" class="nav-link">Residencial</a></li>
+                    <li><a href="eventos.html" class="nav-link">Eventos</a></li>
+                    <li><a href="golf.html" class="nav-link">Golf</a></li>
+                    <li><a href="sobre.html" class="nav-link">Sobre</a></li>
+                    <li><a href="contato.html" class="nav-link">Contato</a></li>
+                </ul>
+            </nav>
+
+            <button class="menu-toggle" aria-label="Abrir Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Hero (Simple dark overlay style) -->
+        <section class="page-hero commercial-hero" style="background-image: url(assets/img-hero/hero-carrossel-prince.png);">
+            <div class="container fade-in-up">
+                <div class="hero-commercial-content">
+                    <span class="commercial-kicker">PRINCE TOWER</span>
+                    <h1>Galeria Prince Tower</h1>
+                    <p class="commercial-subheadline">Conheça os ambientes, espaços e experiências que fazem parte do Prince Tower.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section class="section" style="background-color: var(--bg-light); padding: 5rem 0;">
+            <div class="container fade-in-up">
+                <!-- Filters -->
+                <div class="gallery-filters">
+                    <button class="filter-btn active" data-category="all">Todos</button>
+                    <button class="filter-btn" data-category="empreendimento">Empreendimento</button>
+                    <button class="filter-btn" data-category="comercial">Comercial</button>
+                    <button class="filter-btn" data-category="residencial">Residencial</button>
+                    <button class="filter-btn" data-category="eventos">Eventos</button>
+                    <button class="filter-btn" data-category="golf">Golf</button>
+                </div>
+
+                <!-- Masonry Container -->
+                <div class="gallery-masonry" id="gallery-container">
+                    <!-- Rendered via Javascript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Lightbox Overlay -->
+        <div class="lightbox" id="lightbox">
+            <div class="lightbox-content">
+                <button class="lightbox-close" id="lightbox-close" aria-label="Fechar galeria">×</button>
+                
+                <button class="lightbox-arrow prev" id="lightbox-prev" aria-label="Imagem anterior">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                </button>
+                
+                <img src="" alt="" class="lightbox-img" id="lightbox-img">
+                <div class="lightbox-title" id="lightbox-title">Título da Imagem</div>
+                
+                <button class="lightbox-arrow next" id="lightbox-next" aria-label="Próxima imagem">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- CTA Final -->
+        <section class="cta-section fade-in-up">
+            <div class="cta-bg-lines"></div>
+            <div class="container" style="position: relative; z-index: 2;">
+                <div class="cta-grid">
+                    <div class="cta-text">
+                        <h2>Quer conhecer o Prince Tower de perto?</h2>
+                        <p>Entre em contato com nossa equipe e descubra as possibilidades disponíveis para morar, trabalhar, realizar eventos ou aproveitar a estrutura do empreendimento.</p>
+                    </div>
+                    <div class="cta-btns">
+                        <a 
+                            href="https://wa.me/5511998853020?text=Olá!%20Gostaria%20de%20solicitar%20mais%20informações%20sobre%20o%20Prince%20Tower."
+                            class="btn btn-whatsapp"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                            </svg>
+                            Falar no WhatsApp
+                        </a>
+
+                        <a href="contato.html" class="btn btn-outline-white">
+                            Solicitar informações
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Prince Tower. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão WhatsApp Flutuante -->
+    <div class="floating-whatsapp-container">
+        <div class="floating-balloon">Chame no WhatsApp</div>
+
+        <a 
+            href="https://wa.me/5511998853020?text=Olá!%20Gostaria%20de%20solicitar%20mais%20informações."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="whatsapp-fab"
+            aria-label="Falar no WhatsApp"
+        >
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="32px" width="32px" xmlns="http://www.w3.org/2000/svg">
+                <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zM223.9 413.6c-33.1 0-65.5-8.9-94-25.7l-6.7-4-69.8 18.3L72 334.3l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.4-186.6 184.4zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3s19.9 53.7 22.6 57.4c2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"></path>
+            </svg>
+        </a>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script>
+        // Array JavaScript de fotos da Galeria (Fácil manutenção)
+        const galleryPhotos = [
+            // Empreendimento
+            { src: "assets/img-hero/hero-carrossel-prince.png", category: "empreendimento", title: "Prince Tower Fachada" },
+            
+            // Comercial
+            { src: "assets/pag comercial/6.png", category: "comercial", title: "Recepção Comercial" },
+            { src: "assets/pag comercial/4.png", category: "comercial", title: "Salas de Reuniões" },
+            { src: "assets/pag comercial/3.png", category: "comercial", title: "Estações de Trabalho" },
+            { src: "assets/pag comercial/2.png", category: "comercial", title: "Escritórios Corporativos" },
+            
+            // Residencial
+            { src: "assets/pag residencial/4.png", category: "residencial", title: "Ambientes Integrados" },
+            { src: "assets/pag residencial/2.png", category: "residencial", title: "Quartos Aconchegantes" },
+            { src: "assets/pag residencial/1.png", category: "residencial", title: "Cozinha e Praticidade" },
+            { src: "assets/pag residencial/3.png", category: "residencial", title: "Sala de Estar Residencial" },
+            
+            // Eventos
+            { src: "assets/pag eventos/7.png", category: "eventos", title: "Salão de Eventos" },
+            { src: "assets/pag eventos/5.png", category: "eventos", title: "Espaço de Convivência" },
+            { src: "assets/pag eventos/6.png", category: "eventos", title: "Salas de Conferência" },
+            { src: "assets/pag eventos/4.png", category: "eventos", title: "Lobby de Recepção" },
+            
+            // Golf
+            { src: "assets/pag golf/3.png", category: "golf", title: "Drive Range Noturno" },
+            { src: "assets/pag golf/2.png", category: "golf", title: "Baias Automatizadas" },
+            { src: "assets/pag golf/1.png", category: "golf", title: "Prática e Equipamentos" },
+            { src: "assets/pag golf/4.png", category: "golf", title: "Área de Treino e Lazer" }
+        ];
+
+        let activeFilteredPhotos = [...galleryPhotos];
+        let currentPhotoIndex = 0;
+
+        const container = document.getElementById('gallery-container');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+
+        // Lightbox Elements
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxTitle = document.getElementById('lightbox-title');
+        const lightboxClose = document.getElementById('lightbox-close');
+        const lightboxPrev = document.getElementById('lightbox-prev');
+        const lightboxNext = document.getElementById('lightbox-next');
+
+        // Renderização da galeria
+        const renderGallery = (category) => {
+            container.innerHTML = '';
+            
+            // Filtrar itens
+            activeFilteredPhotos = category === 'all' 
+                ? galleryPhotos 
+                : galleryPhotos.filter(photo => photo.category === category);
+                
+            activeFilteredPhotos.forEach((photo, index) => {
+                const item = document.createElement('div');
+                item.className = 'gallery-masonry-item';
+                item.dataset.index = index;
+                
+                item.innerHTML = `
+                    <img src="${photo.src}" alt="${photo.title}" loading="lazy">
+                    <div class="gallery-item-info">
+                        <h4>${photo.title}</h4>
+                    </div>
+                `;
+                
+                item.addEventListener('click', () => {
+                    openLightbox(index);
+                });
+                
+                container.appendChild(item);
+            });
+        };
+
+        // Gerenciar filtros
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                e.currentTarget.classList.add('active');
+                
+                const category = e.currentTarget.dataset.category;
+                renderGallery(category);
+            });
+        });
+
+        // Lightbox Logic
+        const openLightbox = (index) => {
+            currentPhotoIndex = index;
+            updateLightboxContent();
+            lightbox.style.display = 'flex';
+            setTimeout(() => {
+                lightbox.classList.add('active');
+            }, 10);
+            document.body.style.overflow = 'hidden';
+        };
+
+        const closeLightbox = () => {
+            lightbox.classList.remove('active');
+            setTimeout(() => {
+                lightbox.style.display = 'none';
+            }, 300);
+            document.body.style.overflow = '';
+        };
+
+        const updateLightboxContent = () => {
+            const currentPhoto = activeFilteredPhotos[currentPhotoIndex];
+            if (currentPhoto) {
+                lightboxImg.src = currentPhoto.src;
+                lightboxImg.alt = currentPhoto.title;
+                lightboxTitle.textContent = currentPhoto.title;
+            }
+        };
+
+        const nextPhoto = () => {
+            currentPhotoIndex = (currentPhotoIndex + 1) % activeFilteredPhotos.length;
+            updateLightboxContent();
+        };
+
+        const prevPhoto = () => {
+            currentPhotoIndex = (currentPhotoIndex - 1 + activeFilteredPhotos.length) % activeFilteredPhotos.length;
+            updateLightboxContent();
+        };
+
+        // Lightbox event listeners
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightboxNext.addEventListener('click', (e) => {
+            e.stopPropagation();
+            nextPhoto();
+        });
+        lightboxPrev.addEventListener('click', (e) => {
+            e.stopPropagation();
+            prevPhoto();
+        });
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+
+        // Teclado
+        document.addEventListener('keydown', (e) => {
+            if (lightbox.classList.contains('active')) {
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowRight') nextPhoto();
+                if (e.key === 'ArrowLeft') prevPhoto();
+            }
+        });
+
+        // Inicializar
+        renderGallery('all');
+    </script>
+</body>
+</html>
