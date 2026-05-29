@@ -93,6 +93,22 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
+    const prevBtn = document.querySelector('.carousel-control.prev');
+    const nextBtn = document.querySelector('.carousel-control.next');
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        prevSlide();
+        resetSlideShow();
+      });
+    }
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        nextSlide();
+        resetSlideShow();
+      });
+    }
+
     updateSlides();
     startSlideShow();
   }

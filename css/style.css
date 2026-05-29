@@ -556,11 +556,13 @@ img {
 
 @media (max-width: 768px) {
   .hero {
-    height: 65vh;
+    height: 75vh;
+    min-height: 580px;
   }
   .carousel-slide {
     width: 85vw;
-    height: 40vh;
+    height: 60vh;
+    min-height: 480px;
     border-radius: 12px;
   }
   .carousel-slide.prev {
@@ -570,21 +572,39 @@ img {
     transform: translate(calc(-50% + 85%), -50%) scale(0.5);
   }
   .hero-title {
-    font-size: 1.6rem;
+    font-size: 1.35rem;
+    margin-bottom: 0.5rem;
   }
   .hero-text {
-    font-size: 0.95rem;
+    font-size: 0.88rem;
+    margin-bottom: 1.25rem;
   }
   .hero-btns {
     flex-direction: column;
-    gap: 12px;
+    gap: 8px;
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+  .hero-btns .btn {
+    padding: 10px 20px;
+    font-size: 0.8rem;
+    width: 100%;
   }
   .carousel-indicators {
-    bottom: calc(12.5vh + 20px);
+    bottom: 20px;
   }
   .header {
-    background-color: rgba(17, 34, 51, 0.95);
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02), 0 4px 16px rgba(0, 0, 0, 0.04);
     padding: 16px 0;
+  }
+  .menu-toggle span {
+    background-color: var(--primary-color);
+    box-shadow: none;
   }
   .nav-link {
     text-shadow: none;
@@ -2510,7 +2530,7 @@ textarea.form-control {
 @media (max-width: 1024px) {
   .cards-grid {
     grid-template-columns: repeat(2, 1fr);
-    margin-top: -40px;
+    margin-top: 24px;
   }
   
   .about-grid, .contact-grid {
@@ -2586,6 +2606,21 @@ textarea.form-control {
   .footer-grid {
     grid-template-columns: 1fr;
     gap: 40px;
+  }
+  
+  .footer-col {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .footer-logo {
+    justify-content: center;
+  }
+  
+  .contact-info li {
+    justify-content: center;
   }
   
   .footer-bottom {
@@ -2771,4 +2806,62 @@ textarea.form-control {
 
 .interactive-info-box:hover svg {
   transform: scale(1.08);
+}
+
+/* ==========================================================================
+   Carousel Navigation Arrows
+   ========================================================================== */
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 15;
+  transition: var(--transition);
+  outline: none;
+}
+
+.carousel-control:hover {
+  background: rgba(255, 255, 255, 0.35);
+  border-color: #ffffff;
+  transform: translateY(-50%) scale(1.05);
+  color: var(--secondary-color);
+}
+
+.carousel-control.prev {
+  left: 24px;
+}
+
+.carousel-control.next {
+  right: 24px;
+}
+
+@media (max-width: 768px) {
+  .carousel-control {
+    width: 38px;
+    height: 38px;
+    background: rgba(17, 34, 51, 0.25); /* slightly darker for better contrast on mobile */
+    border-color: rgba(255, 255, 255, 0.15);
+  }
+  .carousel-control.prev {
+    left: 8px;
+  }
+  .carousel-control.next {
+    right: 8px;
+  }
+  .carousel-control:hover {
+    transform: translateY(-50%); /* disable hover scale for clean mobile tap */
+    background: rgba(17, 34, 51, 0.4);
+  }
 }
